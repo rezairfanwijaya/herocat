@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
+body {
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+}
+
+html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --kuning: #fdae02;
+    --putih: #fff;
+    --biru: #007cfe;
+    --hoverbiru: #0772e2;
+    --hoverkuning: #ffb71b;
+}
+
+.navbar {
+    background-color: var(--biru);
+}
+
+.navbar .logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.navbar .nav-item {
+    color: var(--putih);
+    margin: 15px auto;
+    font-size: 1.1rem;
+}
+
+.navbar form .cari {
+    display: flex;
+    justify-content: center;
+    margin: 15px auto;
+    position: relative;
+}
+
+.navbar form .cari input {
+    height: 40px;
+    width: 95%;
+    border: 0;
+    border-radius: 5px;
+    padding: 0 12px;
+}
+
+.navbar form .cari input:focus {
+    outline: 0;
+}
+
+.navbar form button {
+    background-color: var(--kuning);
+    border: none;
+    position: absolute;
+    right: 6px;
+    font-size: 1.3rem;
+    color: var(--putih);
+    height: 40px;
+    border-radius: 0 5px 5px 0;
+}
+
+.navbar .profile {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    border-radius: 100px;
+    background-color: var(--kuning);
+    margin: 0 auto;
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+
+.navbar .profile a {
+    color: var(--putih);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-weight: 700;
+}
+
+
+/* responsive */
+
+@media (min-width:1023px) {
+    .navbar {
+        /* border: 2px solid red; */
+        padding: 7px 30px;
+    }
+    .navbar .logo {
+        font-size: 2.4rem;
+        letter-spacing: 2px;
+    }
+    .navbar .nav-item {
+        margin: 0 19px;
+        font-size: 1rem;
+    }
+    .navbar .nav-item:hover::after,
+    .navbar .nav-item.active::after {
+        content: '';
+        display: block;
+        border: 1px solid var(--kuning);
+        margin-top: -2px;
+        animation: nav-item 1s forwards;
+    }
+    @keyframes nav-item {
+        0% {
+            width: 0;
+        }
+        100% {
+            width: 100%;
+        }
+    }
+    .navbar form .cari {
+        margin-right: 130px;
+        width: 92%;
+    }
+    .navbar form .cari input {
+        /* display: none; */
+        height: 40px;
+        width: 225%;
+        border: 0;
+        border-radius: 5px;
+        padding: 0 12px;
+    }
+    .navbar form button {
+        /* display: none; */
+        position: absolute;
+        right: 0;
+    }
+    .navbar .profile {
+        width: 45px;
+        height: 45px;
+        margin: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}

@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
+body {
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+}
+
+html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --kuning: #fdae02;
+    --putih: #fff;
+    --biru: #007cfe;
+    --hoverbiru: #0772e2;
+    --hoverkuning: #ffb71b;
+    --birumuda: #C9E4FF;
+}
+
+.help {
+    background-color: black;
+    width: 55px;
+    height: 55px;
+    border-radius: 100px;
+    position: fixed;
+    z-index: 99;
+    bottom: 20px;
+    right: 15px;
+}
+
+.help img {
+    margin: 10px 2px;
+    width: 90%;
+}
+
+.main {
+    margin: 40px 0;
+}
+
+.main p.title-section {
+    background-color: var(--kuning);
+    width: 60%;
+    font-size: 1.2rem;
+    text-align: center;
+    border-radius: 100px;
+    padding: 5px;
+    color: var(--biru);
+}
+
+.main .card {
+    display: grid;
+    margin: 20px auto;
+    background-color: var(--birumuda);
+    border: 0;
+}
+
+.main .donasi {
+    background-color: var(--birumuda);
+}
+
+.main .donasi .card {
+    border: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 0;
+    width: 18rem;
+}
+
+.main .card img.donasi {
+    width: 40%;
+}
+
+.main .card h5 {
+    font-weight: 700;
+}
+
+.main .card h5.donasi {
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.main .card.artikel h5 {
+    text-align: left;
+    font-weight: 500;
+}
+
+.main .card.artikel a.read {
+    float: right;
+}
+
+.main .btn {
+    background-color: var(--biru);
+    width: 50%;
+    display: grid;
+    margin: 10px auto;
+}
+
+.main .btn.donasi {
+    background-color: var(--kuning);
+    width: 100%;
+    display: grid;
+    margin: 10px auto;
+    border-radius: 100px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.main .btn:hover {
+    background-color: var(--hoverbiru);
+}
+
+
+/* responsive */
+
+@media (min-width:767px)and (max-width:1023px) {
+    .main p.title-section {
+        width: 40%;
+    }
+}
+
+@media (min-width:1024px) {
+    .main p.title-section {
+        width: 20%;
+    }
+    .main .adopsi {
+        border: 2px solid black;
+        display: flex;
+    }
+    .main .donasi .card {
+        border: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 4px 0;
+        width: max-content;
+    }
+    .main .card img.donasi {
+        width: 16%;
+    }
+    .main .card h5.donasi {
+        font-weight: 500;
+        letter-spacing: 1px;
+        width: 44%;
+        display: grid;
+        margin: 0 auto;
+    }
+    .main .btn.donasi {
+        background-color: var(--kuning);
+        width: 15%;
+        display: grid;
+        margin: 10px auto;
+        border-radius: 100px;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+}
+
+
+/* responsive */

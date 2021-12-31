@@ -1,0 +1,198 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
+body {
+    background: url('../assets/img/bgRegister.png')no-repeat;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+:root {
+    --kuning: #FDAE02;
+    --kuningMuda: #FFA51C;
+    --putih: #fff;
+    --abu: #545454;
+}
+
+.navbar .logo {
+    padding: 20px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--putih);
+}
+
+.main {
+    background-color: rgba(84, 84, 84, 40%);
+    margin-top: 50px;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 75vh;
+}
+
+.main p.title {
+    color: var(--putih);
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+
+.main .form label {
+    color: var(--putih);
+    font-size: .8rem;
+}
+
+.main .form input {
+    height: 40px;
+    border-radius: 8px;
+    border: none;
+    padding: 0 10px;
+}
+
+.main .form input::placeholder {
+    font-size: .8rem;
+    font-style: italic;
+}
+
+.main .password {
+    position: relative;
+}
+
+.main .password :nth-child(5) {
+    display: none;
+}
+
+#see .main .password :nth-child(5) {
+    margin-top: -2px;
+    display: block;
+}
+
+#see .main .password :nth-child(4) {
+    display: none;
+}
+
+.main .form img.icon {
+    position: absolute;
+    top: 60%;
+    right: 10px;
+    width: 25px;
+}
+
+.main .login .btn-login {
+    border: none;
+    background-color: var(--kuning);
+    display: grid;
+    padding: 8px 85px;
+    color: var(--putih);
+    letter-spacing: 2px;
+    border-radius: 10px;
+}
+
+.main .to-signup {
+    color: var(--putih);
+    font-size: .7rem;
+}
+
+.main .to-signup span {
+    color: var(--kuning);
+    font-weight: 600;
+}
+
+
+/* responsive */
+
+
+/* tablet */
+
+@media (min-width:767px) and (max-width:1020px) {
+    body {
+        padding: 0;
+        margin: 0;
+        height: fit-content;
+        background-size: 220%;
+        overflow-y: hidden;
+    }
+    html {
+        overflow-y: hidden;
+    }
+    .navbar .logo {
+        font-size: 2rem;
+        font-weight: 700;
+    }
+    .main {
+        height: 101vh;
+        position: absolute;
+        top: -5%;
+        right: 0;
+        width: 60%;
+    }
+    .main .form input {
+        height: 50px;
+        border-radius: 8px;
+        border: none;
+        padding: 0 10px;
+        width: 400px;
+    }
+    .main .login .btn-login {
+        width: 400px;
+    }
+}
+
+
+/* desktop */
+
+@media (min-width:1021px) {
+    .navbar .logo {
+        font-size: 2rem;
+        font-weight: 700;
+    }
+    .main p.title {
+        font-size: 1.8rem;
+        letter-spacing: 2px;
+        font-weight: 700;
+    }
+    .main {
+        height: 101vh;
+        position: absolute;
+        top: -8%;
+        right: 0;
+        width: 50%;
+    }
+    .main .form label {
+        font-size: .9rem;
+        letter-spacing: 1px;
+    }
+    .main .form input {
+        height: 50px;
+        border-radius: 8px;
+        border: none;
+        padding: 0 10px;
+        width: 500px;
+    }
+    .main .login .btn-login {
+        width: 500px;
+        height: 50px;
+        line-height: 35px;
+        font-weight: 700;
+    }
+    .main .login .btn-login:hover {
+        background-color: var(--kuningMuda);
+    }
+    .main .to-signup {
+        color: var(--putih);
+        font-size: .9rem;
+    }
+}
+
+
+/* responsive */

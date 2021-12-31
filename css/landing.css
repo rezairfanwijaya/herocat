@@ -1,0 +1,474 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+:root {
+    --biru: #007cfe;
+    --biruMuda: #c9e4ff;
+    --biruTua: #073c75;
+    --kuning: #fe9a01;
+    --kuningMuda: #FFA51C;
+    --putih: #fff;
+}
+
+
+/* float-botton */
+
+.float-botton {
+    background-color: var(--biru);
+    width: 43px;
+    height: 43px;
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    border-radius: 100px;
+    z-index: 9;
+}
+
+.float-botton .icon {
+    color: var(--putih);
+    font-size: 1.6rem;
+    margin-top: 7px;
+    margin-left: 8px;
+}
+
+
+/* navbar */
+
+.navbar {
+    background-color: var(--biru);
+}
+
+.navbar .logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--putih);
+}
+
+.navbar .nav-item {
+    margin: 0 auto;
+    margin-top: 30px;
+    color: var(--putih);
+}
+
+.navbar .navbar-collapse {
+    transition: 0.9s;
+}
+
+.navbar .login {
+    margin: 20px auto;
+    background-color: var(--kuning);
+    width: 70%;
+    border-radius: 100px;
+    padding: 8px 45px;
+    text-align: center;
+}
+
+
+/* caption hero  */
+
+#hero {
+    position: relative;
+}
+
+.caption {
+    position: absolute;
+    top: 100px;
+    width: 100%;
+}
+
+.caption p.title {
+    color: var(--putih);
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.caption p.desc-title {
+    margin: 40px 0;
+    text-align: center;
+    color: var(--putih);
+}
+
+.caption .login {
+    margin: 0 auto;
+    margin-top: 80px;
+    padding: 8px 40px;
+    background-color: var(--kuning);
+    text-align: center;
+    width: 50%;
+    border-radius: 100px;
+}
+
+.caption .login .login-button {
+    color: var(--putih);
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+
+/* main (fitur dan service) */
+
+.main,
+.service {
+    padding: 20px 0;
+    /* border: 2px solid red; */
+    margin: 40px 0;
+}
+
+.main p.title {
+    color: var(--biru);
+    font-size: 1.7rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.main p.title span {
+    background-color: var(--kuning);
+}
+
+.main .konten-fitur {
+    background-color: var(--biruMuda);
+    padding: 30px;
+}
+
+.main .konten-fitur .kartu {
+    background-color: var(--putih);
+    padding: 20px;
+    width: 17rem;
+    display: grid;
+    margin: 0 auto;
+    border-radius: 20px;
+}
+
+.main .konten-fitur .kartu p.title {
+    color: var(--kuning);
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.main .konten-fitur .kartu img {
+    width: 50%;
+    display: grid;
+    margin: 20px auto;
+}
+
+.main .konten-fitur .kartu p.desc {
+    margin: 15px 0;
+    color: var(--kuning);
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+
+/* service */
+
+.main .body {
+    margin: 30px 0;
+    padding: 10px;
+}
+
+.main .body p.title-service {
+    color: var(--biru);
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.main .body p.title-desc {
+    text-align: center;
+}
+
+
+/* testimoni */
+
+.main .konten-fitur .kartu p.nama {
+    color: var(--biru);
+}
+
+
+/* testimoni */
+
+
+/* footer */
+
+.footer {
+    margin-top: -60px;
+    background-color: var(--biruTua);
+    padding: 30px 20px;
+}
+
+.footer .container-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 560px;
+}
+
+.footer .container-footer .about p.logo {
+    color: var(--putih);
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.footer .container-footer .about p.desc {
+    color: var(--putih);
+    letter-spacing: 1px;
+    line-height: 27px;
+    text-align: left;
+}
+
+.footer .container-footer .alamat p.title,
+.footer .container-footer .sosmed p.title {
+    color: var(--putih);
+    font-size: 1.3rem;
+}
+
+.footer .container-footer .alamat p.desc {
+    color: var(--putih);
+    letter-spacing: 1px;
+}
+
+.footer .container-footer .sosmed .sosmed-list {
+    display: flex;
+    justify-content: space-between;
+    width: 45%;
+}
+
+.footer .container-footer .sosmed .sosmed-list .icon {
+    font-size: 1.6rem;
+    color: var(--putih);
+}
+
+.footer .copyright {
+    margin-top: 100px;
+    color: var(--putih);
+    text-align: center;
+    font-size: 0.7rem;
+}
+
+
+/* footer */
+
+
+/* responsive */
+
+
+/* tablet */
+
+@media (min-width: 767px) and (max-width: 1023px) {
+    /* float-botton */
+    .float-botton {
+        width: 46px;
+        height: 46px;
+        bottom: 30px;
+        right: 35px;
+    }
+    .float-botton .icon {
+        margin-top: 8px;
+        margin-left: 10px;
+    }
+    /* navbar */
+    .navbar {
+        padding: 10px 50px;
+    }
+    .navbar .login {
+        width: 40%;
+    }
+    /* caption hero  */
+    .caption {
+        top: 70px;
+    }
+    .caption p.title {
+        font-size: 2.3rem;
+    }
+    .caption .login {
+        width: 25%;
+    }
+    /* fitur */
+    .main .konten-fitur .kartu {
+        padding: 10px;
+        width: 100%;
+        border-radius: 16px;
+    }
+    .main .konten-fitur .kartu p.title {
+        font-size: 1.2rem;
+    }
+    .main .konten-fitur .kartu img {
+        width: 30%;
+    }
+    .main .konten-fitur .kartu p.desc {
+        letter-spacing: 0;
+        font-size: 1rem;
+    }
+    /* service */
+    .main p.title.service {
+        margin-bottom: 40px;
+    }
+    /* testimonial */
+    .main p.title.testi {
+        margin-top: 70px;
+    }
+    .main .kartu img.testi {
+        width: 40%;
+    }
+    /* footer */
+    .footer .container-footer {
+        height: 400px;
+    }
+    .footer .container-footer .sosmed .sosmed-list {
+        width: 17%;
+    }
+}
+
+
+/* desktop */
+
+@media (min-width:1024px) {
+    /* float-botton */
+    .float-botton {
+        width: 52px;
+        height: 52px;
+        bottom: 30px;
+        right: 55px;
+    }
+    .float-botton:hover {
+        background-color: var(--biruTua);
+    }
+    .float-botton .icon {
+        margin-top: 11px;
+        margin-left: 13px;
+    }
+    /* navbar */
+    .navbar {
+        padding: 15px 30px;
+    }
+    .navbar .logo {
+        font-size: 2.3rem;
+        letter-spacing: 2px;
+    }
+    .navbar .nav-item {
+        margin: 0 20px;
+        margin-top: 0;
+        color: var(--putih);
+    }
+    .navbar .nav-item:hover::after,
+    .navbar .nav-item.active::after {
+        content: '';
+        border-bottom: 3px solid var(--kuningMuda);
+        display: block;
+        margin-top: -2px;
+        width: 100%;
+        animation: navbar .5s;
+    }
+    @keyframes navbar {
+        0% {
+            width: 0%;
+        }
+        100% {
+            width: 100%;
+        }
+    }
+    .navbar .login {
+        margin: 0;
+        background-color: var(--kuning);
+        width: auto;
+        border-radius: 100px;
+        padding: 8px 45px;
+        text-align: center;
+    }
+    .navbar .login:hover {
+        background-color: var(--kuningMuda);
+    }
+    /* hero */
+    .caption {
+        position: absolute;
+        top: 90px;
+        left: 30px;
+        width: 100%;
+    }
+    .caption p.title {
+        font-size: 3rem;
+        text-align: left;
+    }
+    .caption p.desc-title {
+        margin: 10px 0;
+        text-align: left;
+    }
+    .caption .login {
+        margin: 0 0;
+        margin-top: 50px;
+        padding: 10px 20px;
+        width: 30%;
+    }
+    .caption .login:hover {
+        background-color: var(--kuningMuda);
+    }
+    /* fitur */
+    .main .konten-fitur .kartu {
+        width: 22rem;
+    }
+    /* service */
+    .main .body p.title-desc {
+        width: 59%;
+        margin: 0 auto;
+    }
+    .main .body .bulet {
+        position: absolute;
+        z-index: -1;
+        left: -70px;
+        background-color: var(--kuning);
+        width: 290px;
+        height: 290px;
+        border-radius: 400px;
+    }
+    /* footer */
+    .footer {
+        background-color: var(--biruTua);
+        padding: 150px 20px 20px 20px;
+    }
+    .footer .container-footer {
+        flex-direction: row;
+        height: auto;
+        justify-content: space-between;
+        padding: 20px;
+    }
+    .footer .container-footer .about {
+        width: 50%;
+    }
+    .footer .container-footer .about p.desc {
+        color: var(--putih);
+        line-height: 27px;
+        font-size: .9rem;
+        width: 75%;
+    }
+    .footer .container-footer .alamat {
+        width: 35%;
+    }
+    .footer .container-footer .alamat p.desc {
+        font-size: .9rem;
+        width: 70%;
+    }
+    .footer .container-footer .sosmed {
+        width: 20%;
+    }
+    .footer .container-footer .sosmed .icon:hover {
+        color: var(--kuningMuda);
+    }
+}
+
+
+/* responsive */
