@@ -4,23 +4,23 @@ require_once "../function/function.php";
 
 
 // cek cookie
-if (isset($_COOKIE["id"]) && isset($_COOKIE["username"])){
+if (isset($_COOKIE["id"]) && isset($_COOKIE["username"])) {
     // jika ada tampung cookie ke dalam variable
     $id = $_COOKIE["id"];
     $username = $_COOKIE["username"];
-    
+
     // apakah cookie sesuai dengan user yang login
     $sql = "SELECT * FROM user WHERE id = $id";
     $query = mysqli_query($conn, $sql);
     $data = mysqli_fetch_assoc($query);
     // jika sama maka buatkan session
-    if ($username === hash("sha256", $data["username"])){
-        $_SESSION["login"]=true;
+    if ($username === hash("sha256", $data["username"])) {
+        $_SESSION["login"] = true;
     }
 }
 
 // jika sudah punya session maka arahkan user ke home
-if (isset($_SESSION["login"])){
+if (isset($_SESSION["login"])) {
     header("location:../index.php");
 }
 
@@ -46,23 +46,26 @@ if (isset($_POST["login"])) {
         // jika ada maka cek passwordnya
         if (password_verify($password, $data["password"])) {
 
-            if (isset($_POST["cookie"])){
+            if (isset($_POST["cookie"])) {
                 // buat cookies
                 setcookie('id', $data["id_user"]);
                 setcookie("username", hash("sha256", $data["username"]), time() + 60);
             }
-        
-            // buat session
-            $_SESSION["id"] = $data["id_user"];
-            $_SESSION["login"] = true;
-            
+
+
+
             // memilih antara admin atau user
-            if ($data["level"] === 'user'){
+            if ($data["level"] === 'user') {
+                // buat session
+                $_SESSION["id"] = $data["id_user"];
+                $_SESSION["login"] = true;
                 $successuser = true;
-            }else{
+            } else {
+                // buat session
+                $_SESSION["id"] = $data["id_user"];
+                $_SESSION["login"] = true;
                 $successadmin = true;
             }
-
         } else {
             $failed = true;
         }
@@ -99,9 +102,9 @@ if (isset($_POST["login"])) {
     <!-- gagal login -->
     <?php if (isset($failed)) : ?>
         <div class="alert alert-warning alert-dismissible fade show sticky-top" role="alert">
-    <strong>Gagal Masuk</strong> username atau password salah.
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-  </div>
+            <strong>Gagal Masuk</strong> username atau password salah.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
     <?php endif ?>
     <!-- gagal login -->
 
@@ -215,15 +218,15 @@ if (isset($_POST["login"])) {
         <script>
             swal({
                     title: "Username Belum Terdaftar",
-                    text : "Silahkan daftar terlebih dahulu",
+                    text: "Silahkan daftar terlebih dahulu",
                     icon: "warning",
                     buttons: {
-                        cancel : "Batal",
-                        Daftar : true
+                        cancel: "Batal",
+                        Daftar: true
                     }
                 })
-                .then ((value) =>{
-                    switch (value){
+                .then((value) => {
+                    switch (value) {
                         case "Daftar":
                             location.href = "register.php"
                     }
