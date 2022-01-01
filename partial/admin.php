@@ -1,3 +1,13 @@
+<?php 
+session_start();
+if (isset($_POST["logout"])){
+    require_once ('../session/destroyAdmin.php');
+    header('location: ../gate/login.php');
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -301,8 +311,12 @@
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Logout
+                                <a class="dropdown-item" href="" data-toggle="modal" data-target="#logoutModal">
+                                    <form action="" method="POST">
+                                        <button name="logout" type="submit" class="btn">
+                                            <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Logout
+                                        </button>
+                                    </form>
                                 </a>
                             </div>
                         </li>
@@ -311,5 +325,3 @@
 
                 </nav>
                 <!-- End of Topbar -->
-
-
