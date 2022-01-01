@@ -3,7 +3,7 @@ session_start();
 require_once "../function/function.php";
 
 
-// cek cookie
+// cek cookie untuk user
 if (isset($_COOKIE["id"]) && isset($_COOKIE["username"])) {
     // jika ada tampung cookie ke dalam variable
     $id = $_COOKIE["id"];
@@ -15,13 +15,28 @@ if (isset($_COOKIE["id"]) && isset($_COOKIE["username"])) {
     $data = mysqli_fetch_assoc($query);
     // jika sama maka buatkan session
     if ($username === hash("sha256", $data["username"])) {
-        $_SESSION["login"] = true;
+        $_SESSION["login_user"] = true;
     }
 }
 
 // jika sudah punya session maka arahkan user ke home
-if (isset($_SESSION["login"])) {
+if (isset($_SESSION["login_user"])) {
     header("location:../index.php");
+}
+
+// set cookie untuk admin
+if (isset($_COOKIE["level"]) && isset($_COOKIE["login"])){
+    $level = $_COOKIE["level"];
+    $query = mysqli_query($conn,"SELECT * FROM user where level = '$level'");
+    $data = mysqli_fetch_assoc($query);
+    if ($level === $data["level"]){
+        $_SESSION["level"] = $data["level"];
+        $_SESSION["login_admin"] = true;
+    }
+}
+
+if (isset($_SESSION["level"])){
+    header('location:../admin/index.php');
 }
 
 
@@ -58,12 +73,12 @@ if (isset($_POST["login"])) {
             if ($data["level"] === 'user') {
                 // buat session
                 $_SESSION["id"] = $data["id_user"];
-                $_SESSION["login"] = true;
+                $_SESSION["login_user"] = true;
                 $successuser = true;
             } else {
                 // buat session
-                $_SESSION["id"] = $data["id_user"];
-                $_SESSION["login"] = true;
+                $_SESSION["level"] = $data["level"];
+                $_SESSION["login_admin"] = true;
                 $successadmin = true;
             }
         } else {
@@ -207,7 +222,7 @@ if (isset($_POST["login"])) {
                 })
                 .then((login) => {
                     if (login) {
-                        location.href = "../admin/index.php"
+                        location.href = "../admin/dashboard.php"
                     }
                 });
         </script>

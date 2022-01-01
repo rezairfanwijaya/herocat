@@ -12,13 +12,14 @@ if (!$conn) {
 
 
 // read data
-function tampil ($sql){
+function tampil($sql)
+{
   global $conn;
-  
+
   $query = mysqli_query($conn, $sql);
   $rows = [];
-  while ($row = mysqli_fetch_assoc($query)){
-    $rows [] = $row;
+  while ($row = mysqli_fetch_assoc($query)) {
+    $rows[] = $row;
   }
   return $rows;
 }
@@ -68,4 +69,10 @@ function register($data)
   mysqli_query($conn, $sqll);
 
   return mysqli_affected_rows($conn);
+}
+
+// tambah data kucing
+function addData($data)
+{
+  
 }
