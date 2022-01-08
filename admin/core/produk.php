@@ -1,19 +1,36 @@
 <?php
 require_once('../../partial/admin.php');
-require_once ('../../function/function.php');
+require_once('../../function/function.php');
 
-if (isset($_POST["simpan"])){
-  var_dump(addData($_POST));
+// proses save data
+if (isset($_POST["simpan"])) {
+    var_dump(addData($_POST));
 }
+
+// pengecekan apakah data di db kosong atau tidak
+$query = mysqli_query($conn, "SELECT * FROM kucing");
+if (mysqli_num_rows($query) === 0) {
+    $kosong = true;
+} else {
+    $ada = true;
+}
+
+// tampil data
+$cats = tampil("SELECT * FROM kucing");
+$no = 1;
 
 
 ?>
 
 <div class="container">
-    <!-- Modal tambah produk -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    <i class="fas fa-plus-square"></i> Tambah Produk
-    </button>
+    <div class="head mt-5">
+        <!-- Modal tambah produk -->
+        <div class="tambah-produk ">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <i class="fas fa-plus-square"></i> Tambah Produk
+            </button>
+        </div>
+    </div>
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -41,7 +58,8 @@ if (isset($_POST["simpan"])){
 
                         <div class="mb-3">
                             <label for="deskripsi" class="form-label">Deskripsi Kucing</label>
-                            <textarea name="deskripsi" autocomplete="off" id="deskripsi" class="form-control"></textarea>
+                            <textarea name="deskripsi" autocomplete="off" id="deskripsi"
+                                class="form-control"></textarea>
                         </div>
 
                         <div class="mb-3">
@@ -68,8 +86,65 @@ if (isset($_POST["simpan"])){
 
 
     <!-- field tampil data -->
+
+    <!-- jika data kosong -->
+    <?php if (isset($kosong)) : ?>
     <h3 class="text-center">Belum Ada Data</h3>
+    <?php endif ?>
+    <!-- jika data kosong -->
+
+    <!-- jika data tidak kosong -->
+    <?php if (isset($ada)) : ?>
+    <table class="table shadow table-borderless text-center mt-5 text-dark">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Nama</th>
+                <th>Jenis</th>
+                <th>Gambar</th>
+                <th>Deskripsi</th>
+                <th>Stok</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+
+        <?php foreach ($cats as $cat) : ?>
+
+        <tr>
+            <td><?= $no++ ?></td>
+            <td><?= $cat["nama_kucing"] ?></td>
+            <td><?= $cat["jenis_kucing"] ?></td>
+            <td>
+                <img src="../../assets/adopsi/<?= $cat["gambar"] ?>" width="160px">
+            </td>
+            <td><?= $cat["deskripsi_kucing"] ?></td>
+            <td><?= $cat["stok"] ?></td>
+            <td>
+                <button type="button" class="btn btn-primary mx-3" data-bs-toggle="tooltip" data-bs-placement="bottom"title="Edit">
+                    <i class="fas fa-edit"></i>
+                </button>
+
+                <button type="button" class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Hapus">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+
+            </td>
+        </tr>
+
+        <?php endforeach ?>
+    </table>
+    <?php endif ?>
+    <!-- jika data tidak kosong -->
     <!-- field tampil data -->
 
 
 </div>
+
+
+<!-- enable toolpip -->
+<script>
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+</script>

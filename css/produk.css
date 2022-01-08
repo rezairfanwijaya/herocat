@@ -1,3 +1,24 @@
-h3 {
-    margin-top: 35vh;
-}
+    h3 {
+        margin-top: 35vh;
+    }
+    
+    table thead {
+        background-color: rgb(58, 58, 58);
+    }
+    
+    table th {
+        color: #ddd;
+    }
+    
+    table tr.blue {
+        background-color: #F8F8F8;
+    }
+    
+    table td {
+        line-height: 120px;
+    }
+    
+    table td img:hover {
+        transform: scale(2.2);
+        transition: 1s;
+    }
