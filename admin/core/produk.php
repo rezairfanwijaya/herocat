@@ -1,18 +1,18 @@
 <?php
-require_once('../partial/admin.php');
-require_once ('../function/function.php');
+require_once('../../partial/admin.php');
+require_once ('../../function/function.php');
 
 if (isset($_POST["simpan"])){
-    
+  var_dump(addData($_POST));
 }
 
 
 ?>
 
 <div class="container">
-    <!-- Button trigger modal -->
+    <!-- Modal tambah produk -->
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Tambah Produk
+    <i class="fas fa-plus-square"></i> Tambah Produk
     </button>
 
     <!-- Modal -->
@@ -41,7 +41,7 @@ if (isset($_POST["simpan"])){
 
                         <div class="mb-3">
                             <label for="deskripsi" class="form-label">Deskripsi Kucing</label>
-                            <textarea name="dekskripsi" autocomplete="off" id="deskripsi" class="form-control"></textarea>
+                            <textarea name="deskripsi" autocomplete="off" id="deskripsi" class="form-control"></textarea>
                         </div>
 
                         <div class="mb-3">
@@ -63,6 +63,13 @@ if (isset($_POST["simpan"])){
             </div>
         </div>
     </div>
+    <!-- Modal tambah produk -->
+
+
+
+    <!-- field tampil data -->
+    <h3 class="text-center">Belum Ada Data</h3>
+    <!-- field tampil data -->
 
 
 </div>

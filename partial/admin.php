@@ -1,8 +1,9 @@
 <?php
-session_start();
+require_once('../../session/admin/session_in.php');
+
 if (isset($_POST["logout"])) {
-    require_once('../session/logout.php');
-    header('location: ../gate/login.php');
+    require_once('../../session/logout.php');
+    header('location: ../../gate/login.php');
 }
 
 ?>
@@ -22,20 +23,23 @@ if (isset($_POST["logout"])) {
     <title>Herocat | ADMIN</title>
 
     <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- CSS Bootstrap -->
-    <link href="../lib/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link href="../../lib/node_modules/bootstrap/dist/css/bootstrap.min.css">
 
     <!-- Jquery Bootstrap -->
-    <script src="../lib/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../../lib/node_modules/jquery/dist/jquery.min.js"></script>
 
     <!-- JS Bootstrap -->
-    <script src="../lib/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../lib/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="../css/sb-admin-2.min.css" rel="stylesheet">
+
+    <!-- CSS external Produk -->
+    <link href="../../css/produk.css" rel="stylesheet">
 
 </head>
 
@@ -259,7 +263,7 @@ if (isset($_POST["logout"])) {
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
-                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+                                <img class="img-profile rounded-circle" src="../img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -280,21 +284,21 @@ if (isset($_POST["logout"])) {
                 <!-- End of Topbar -->
 
                 <!-- Bootstrap core JavaScript-->
-                <script src="vendor/jquery/jquery.min.js"></script>
-                <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+                <script src="../vendor/jquery/jquery.min.js"></script>
+                <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
                 <!-- Core plugin JavaScript-->
-                <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+                <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
 
                 <!-- Custom scripts for all pages-->
-                <script src="js/sb-admin-2.min.js"></script>
+                <script src="../js/sb-admin-2.min.js"></script>
 
                 <!-- Page level plugins -->
-                <script src="vendor/chart.js/Chart.min.js"></script>
+                <script src="../vendor/chart.js/Chart.min.js"></script>
 
                 <!-- Page level custom scripts -->
-                <script src="js/demo/chart-area-demo.js"></script>
-                <script src="js/demo/chart-pie-demo.js"></script>
+                <script src="../js/demo/chart-area-demo.js"></script>
+                <script src="../js/demo/chart-pie-demo.js"></script>
 
 </body>
 

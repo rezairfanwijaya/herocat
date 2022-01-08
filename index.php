@@ -1,6 +1,6 @@
 <?php
 // import session
-require_once("session/session.php");
+require_once('session/user/session_in.php');
 
 // import navbar
 require_once("partial/nav.php");

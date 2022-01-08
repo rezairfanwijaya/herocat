@@ -1,5 +1,5 @@
 <?php
-require_once('../partial/admin.php');
+require_once('../../partial/admin.php');
 ?>
 <!-- Begin Page Content -->
 <div class="container-fluid">

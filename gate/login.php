@@ -1,5 +1,6 @@
 <?php
-session_start();
+require_once '../session/user/session_out.php';
+require_once '../session/admin/session_out.php';
 require_once "../function/function.php";
 
 
@@ -40,12 +41,6 @@ if (isset($_SESSION["level"])){
 }
 
 
-
-
-
-
-
-
 // apakah tombol login telah di klik
 if (isset($_POST["login"])) {
     // ambil data yang diinput user
@@ -77,6 +72,7 @@ if (isset($_POST["login"])) {
                 $successuser = true;
             } else {
                 // buat session
+                
                 $_SESSION["level"] = $data["level"];
                 $_SESSION["login_admin"] = true;
                 $successadmin = true;
@@ -125,7 +121,7 @@ if (isset($_POST["login"])) {
 
     <!-- navbar untuk logo -->
     <section class="navbar">
-        <a href="../user/landing.html" class="text-decoration-none logo">HeroCat</a>
+        <a href="../user/landing.php" class="text-decoration-none logo">HeroCat</a>
     </section>
     <!-- navbar untuk logo -->
 
@@ -203,8 +199,8 @@ if (isset($_POST["login"])) {
                     icon: "success",
                     button: "OK",
                 })
-                .then((login) => {
-                    if (login) {
+                .then((login_user) => {
+                    if (login_user) {
                         location.href = "../index.php"
                     }
                 });
@@ -220,10 +216,11 @@ if (isset($_POST["login"])) {
                     icon: "success",
                     button: "OK",
                 })
-                .then((login) => {
-                    if (login) {
-                        location.href = "../admin/dashboard.php"
+                .then((login_admin) => {
+                    if (login_admin) {
+                        location.href = "../admin/core/dashboard.php"
                     }
+                    
                 });
         </script>
     <?php endif ?>

@@ -1,4 +1,6 @@
 <?php
+require_once('../session/user/session_out.php');
+require_once('../session/admin/session_out.php');
 // import file function
 require_once("../function/function.php");
 
@@ -9,10 +11,7 @@ if (isset($_POST["register"])) {
         $success = true;
     }
 }
-
 ?>
-
-
 <!doctype html>
 <html lang="en">
 
@@ -33,7 +32,7 @@ if (isset($_POST["register"])) {
 
     <!-- navbar untuk logo -->
     <section class="navbar">
-        <a href="../user/landing.html" class="text-decoration-none logo">HeroCat</a>
+        <a href="../user/landing.php" class="text-decoration-none logo">HeroCat</a>
     </section>
     <!-- navbar untuk logo -->
 

@@ -1,3 +1,8 @@
+<?php 
+require_once('../session/user/session_out.php');
+require_once('../session/admin/session_out.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +18,7 @@
     <link rel="stylesheet" href="../css/landing.css">
 
     <!-- AOS -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
 
 
     <title>Hero-Cat</title>
@@ -49,7 +54,7 @@
                     <a class="nav-item text-decoration-none" href="#footer">About Us</a>
                 </div>
                 <!-- button login -->
-                <a href="../gate/login.php" target="blank" class="text-white text-decoration-none">
+                <a href="../gate/login.php" class="text-white text-decoration-none">
                     <div class="login">
                         Login
                     </div>
@@ -74,7 +79,7 @@
                     </p>
                     <p class="desc-title" data-aos="fade-up" data-aos-delay="90" data-aos-duration="1600">Yuk Bersama Menolong Kucing-Kucing Jalanan!</p>
                     <!-- login button -->
-                    <a href="../gate/login.php" target="blank" class="text-decoration-none text-white login-button">
+                    <a href="../gate/login.php" class="text-decoration-none text-white login-button">
                         <div class="login" data-aos="fade-up" data-aos-delay="300" data-aos-duration="2000">
                             Login
                         </div>
