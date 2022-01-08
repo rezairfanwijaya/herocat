@@ -135,6 +135,8 @@ function upload()
   $namagambarbaru .= $ekstensifinal;
 
   // jika sudah benar semua maka upload
+  // harusnya gambar masuk ke assets/adopsi
+  // tapi dicoba masuk ke dalam direktori yang sama tetap saja tidak masuk
   move_uploaded_file($tmpfile, 'img/'. $namagambarbaru);
 
   return $namagambarbaru;
