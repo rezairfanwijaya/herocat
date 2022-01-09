@@ -4,8 +4,14 @@ require_once('../../function/function.php');
 
 // proses save data
 if (isset($_POST["simpan"])) {
-    var_dump(addData($_POST));
+    if (addData($_POST) > 0 ){
+        $succes= true;
+    }else{
+        $failed= true;
+    }
 }
+
+
 
 // pengecekan apakah data di db kosong atau tidak
 $query = mysqli_query($conn, "SELECT * FROM kucing");
@@ -18,6 +24,20 @@ if (mysqli_num_rows($query) === 0) {
 // tampil data
 $cats = tampil("SELECT * FROM kucing");
 $no = 1;
+
+// proses cari data
+if (isset($_POST["btn-cari"])){
+
+    // jika data ditemukan
+    if ($cats = cari($_POST["keyword"])){
+        $cats = cari($_POST["keyword"]);
+    }else{
+        // jika data tidak ditemukan
+        $noMatch = true;
+
+        $cats = tampil("SELECT * FROM kucing");
+    }
+}
 
 
 ?>
@@ -83,6 +103,21 @@ $no = 1;
     </div>
     <!-- Modal tambah produk -->
 
+    <!-- form cari -->
+    <div class="cari my-3">
+        <form action="" method="POST">
+            <div>
+                <input type="text" name="keyword" placeholder="Cari Data" autocomplete="off">
+            </div>
+            <div>
+                <button name="btn-cari" type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- form cari -->
 
 
     <!-- field tampil data -->
@@ -95,7 +130,7 @@ $no = 1;
 
     <!-- jika data tidak kosong -->
     <?php if (isset($ada)) : ?>
-    <table class="table shadow table-borderless text-center mt-5 text-dark">
+    <table class="table table-bordered text-center">
         <thead>
             <tr>
                 <th>No</th>
@@ -120,11 +155,13 @@ $no = 1;
             <td><?= $cat["deskripsi_kucing"] ?></td>
             <td><?= $cat["stok"] ?></td>
             <td>
-                <button type="button" class="btn btn-primary mx-3" data-bs-toggle="tooltip" data-bs-placement="bottom"title="Edit">
+                <button type="button" class="btn btn-primary mx-3" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                    title="Edit">
                     <i class="fas fa-edit"></i>
                 </button>
 
-                <button type="button" class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Hapus">
+                <button type="button" class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                    title="Hapus">
                     <i class="fas fa-trash-alt"></i>
                 </button>
 
@@ -148,3 +185,39 @@ $no = 1;
         return new bootstrap.Tooltip(tooltipTriggerEl)
     })
 </script>
+
+
+<!-- notif save data berhasil-->
+<?php if (isset($succes)) :?>
+<script>
+    swal({
+        title: "Data Berhasil Ditambahkan",
+        icon: "success",
+        button: "OK",
+    });
+</script>
+<?php endif ?>
+
+<!-- notif save data gagal-->
+<?php if (isset($failed)) :?>
+<script>
+    swal({
+        title: "Data Gagal Ditambahkan",
+        icon: "error",
+        button: "OK",
+    });
+</script>
+<?php endif ?>
+
+
+<!-- notif jika data search tidak cocok -->
+<?php if (isset($noMatch)) :?>
+<script>
+    swal({
+        title: "Data Tidak Ditemukan",
+        text: "Periksa kata kunci anda!",
+        icon: "warning",
+        button: "OK",
+    });
+</script>
+<?php endif ?>

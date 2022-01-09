@@ -92,6 +92,7 @@ function addData($data)
 
   mysqli_query($conn, $sql);
   return mysqli_affected_rows($conn);
+  
 }
 
 // upload gambar
@@ -140,4 +141,17 @@ function upload()
 
   return $namagambarbaru;
 
+}
+
+
+// cari data
+function cari($keyword){
+    
+    $sql = "SELECT * FROM kucing where 
+        nama_kucing LIKE '%$keyword%' OR
+        jenis_kucing LIKE '%$keyword%' OR
+        stok LIKE '%$keyword%'
+    ";
+    
+     return tampil($sql);
 }

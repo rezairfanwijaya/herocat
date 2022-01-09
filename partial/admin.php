@@ -293,9 +293,10 @@ if (isset($_POST["logout"])) {
                 <!-- Custom scripts for all pages-->
                 <script src="../js/sb-admin-2.js"></script>
 
-                <script>
-               
-                </script>
+                <!-- sweet alert -->
+                
+                <script src="../../lib/node_modules/sweetalert/dist/sweetalert.min.js"></script>
+
 
 </body>
 
