@@ -1,3 +1,5 @@
+/* ################### file produk.php #################### */
+
 h3 {
     margin-top: 35vh;
 }
@@ -15,24 +17,34 @@ table td img:hover {
     transition: 1s;
 }
 
-.cari form {
+.sub-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.sub-header span {
+    font-weight: 700;
+}
+
+.sub-header form {
     display: flex;
     justify-content: end;
     align-items: stretch;
 }
 
-.cari form input {
+.sub-header form input {
     width: 150%;
     padding: 7px 15px;
     border: 1px solid #2951c3;
     border-radius: 5px;
 }
 
-.cari form input:focus {
+.sub-header form input:focus {
     outline: #fff;
 }
 
-.cari form button {
+.sub-header form button {
     margin-left: 110px;
     background-color: #2951c3;
     color: #fff;
@@ -40,4 +52,14 @@ table td img:hover {
     height: 40px;
     width: 40px;
     border-radius: 5px;
+}
+
+
+/* ################### file produk.php #################### */
+
+
+/* ################### file edit.php #################### */
+
+form.edit {
+    border-radius: 10px;
 }

@@ -240,7 +240,7 @@ if (isset($_POST["login"])) {
                 .then((value) => {
                     switch (value) {
                         case "Daftar":
-                            location.href = "register.php"
+                            location.href = "hapus.php"
                     }
 
                 });

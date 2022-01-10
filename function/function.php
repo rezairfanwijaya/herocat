@@ -155,3 +155,58 @@ function cari($keyword){
     
      return tampil($sql);
 }
+
+// hapus data
+function hapus ($id){
+  global $conn;
+
+  mysqli_query($conn, "DELETE FROM kucing WHERE id_kucing = $id");
+
+  return mysqli_affected_rows($conn);
+}
+
+// edit data
+function edit($data){
+  global $conn;
+
+  // ambil data yang diinput user
+  $id = $data["id"];
+  $nama = htmlspecialchars($data["nama"]);
+  $jenis = htmlspecialchars($data["jenis"]);
+  $deskripsi = htmlspecialchars($data["deskripsi"]);
+  $stok = htmlspecialchars($data["stok"]);
+  $gambar_lama = htmlspecialchars($data["gambar_lama"]);
+
+  // var_dump($id);
+  // var_dump($nama);
+  // var_dump($jenis);
+  // var_dump($deskripsi);
+  // var_dump($stok);
+  // var_dump($gambar_lama);
+  // die;
+
+  // cek apakah user unggah gambar baru
+  if ($_FILES["gambar_baru"]["error"] === 4){
+    // jika tidak mengunggah gambar baru, pake gambar lama
+    $gambar = $gambar_lama;
+  }else{
+    // ketika mengungah gambar baru
+    $gambar = upload();
+    if(!$gambar){
+      return false;
+    }
+  }
+
+  // masukan data ke database
+  $sql = "UPDATE kucing SET
+        nama_kucing = '$nama',
+        jenis_kucing = '$jenis',
+        deskripsi_kucing = '$deskripsi',
+        stok = '$stok',
+        gambar = '$gambar'
+        WHERE id_kucing = $id
+  ";
+
+  mysqli_query($conn, $sql);
+  return mysqli_affected_rows($conn);
+}

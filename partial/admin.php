@@ -39,7 +39,7 @@ if (isset($_POST["logout"])) {
     <link href="../css/sb-admin-2.min.css" rel="stylesheet">
 
     <!-- CSS external Produk -->
-    <link href="../../css/produk.css" rel="stylesheet">
+    <link href="../../css/admin.css" rel="stylesheet">
 
 </head>
 

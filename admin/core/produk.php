@@ -11,8 +11,6 @@ if (isset($_POST["simpan"])) {
     }
 }
 
-
-
 // pengecekan apakah data di db kosong atau tidak
 $query = mysqli_query($conn, "SELECT * FROM kucing");
 if (mysqli_num_rows($query) === 0) {
@@ -27,10 +25,10 @@ $no = 1;
 
 // proses cari data
 if (isset($_POST["btn-cari"])){
-
+    $key = $_POST["keyword"];
     // jika data ditemukan
-    if ($cats = cari($_POST["keyword"])){
-        $cats = cari($_POST["keyword"]);
+    if ($cats = cari($key)){
+        $cats = cari($key);
     }else{
         // jika data tidak ditemukan
         $noMatch = true;
@@ -39,8 +37,24 @@ if (isset($_POST["btn-cari"])){
     }
 }
 
+// hapus data
+if(isset($_POST["hapus"])){
+    $id = $_POST['id'];
+    hapus($id);
+}
+
+
+// menghitung jumlah data umum
+$sqlTotal = mysqli_query($conn, "SELECT COUNT(id_kucing) as total FROM kucing");
+$res = mysqli_fetch_assoc($sqlTotal);
+
+
 
 ?>
+
+
+<!-- ############################################################################# -->
+
 
 <div class="container">
     <div class="head mt-5">
@@ -103,8 +117,18 @@ if (isset($_POST["btn-cari"])){
     </div>
     <!-- Modal tambah produk -->
 
-    <!-- form cari -->
-    <div class="cari my-3">
+    <!-- sub header -->
+    <div class="sub-header mt-5 mb-3">
+
+        <!-- total produk keseluruhan-->
+        <div class="total-produk">
+            <div>Total Produk : <span><?= $res["total"]?></span></div>
+        </div>
+        <!-- total produk keseluruhan-->
+
+
+
+        <!-- cari -->
         <form action="" method="POST">
             <div>
                 <input type="text" name="keyword" placeholder="Cari Data" autocomplete="off">
@@ -115,9 +139,10 @@ if (isset($_POST["btn-cari"])){
                 </button>
             </div>
         </form>
+        <!-- cari -->
     </div>
 
-    <!-- form cari -->
+    <!-- subheader -->
 
 
     <!-- field tampil data -->
@@ -155,16 +180,26 @@ if (isset($_POST["btn-cari"])){
             <td><?= $cat["deskripsi_kucing"] ?></td>
             <td><?= $cat["stok"] ?></td>
             <td>
-                <button type="button" class="btn btn-primary mx-3" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                    title="Edit">
-                    <i class="fas fa-edit"></i>
-                </button>
+                <form action="" method="POST">
 
-                <button type="button" class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                    title="Hapus">
-                    <i class="fas fa-trash-alt"></i>
-                </button>
+                    <!-- id kucing -->
+                    <input type="hidden" name="id" value="<?=$cat["id_kucing"]?>">
 
+                    <!-- tombol edit -->
+                    <a href="edit.php?id=<?=$cat["id_kucing"]?>" class="text-decoration-none">
+                        <button type="button" class="btn btn-success mx-3" data-bs-toggle="tooltip"
+                            data-bs-placement="bottom" title="Edit">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                    </a>
+
+                    <!-- tombol hapus -->
+                    <button type="submit" class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                        title="Hapus" name="hapus">
+                        <i class="fas fa-trash-alt"></i>
+                    </button>
+
+                </form>
             </td>
         </tr>
 
@@ -219,5 +254,25 @@ if (isset($_POST["btn-cari"])){
         icon: "warning",
         button: "OK",
     });
+</script>
+<?php endif ?>
+
+<!-- notif hapus -->
+<?php if(isset($hapus)):?>
+<script>
+    swal({
+            title: "Hapus Data",
+            text: "Yakin untuk menghapus data ?",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+        .then((hapus) => {
+            if (hapus) {
+                location.href = 'donasi.php'
+            } else {
+                location.href = 'produk.php'
+            }
+        });
 </script>
 <?php endif ?>
