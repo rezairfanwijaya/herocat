@@ -163,6 +163,7 @@ function hapus ($id){
   mysqli_query($conn, "DELETE FROM kucing WHERE id_kucing = $id");
 
   return mysqli_affected_rows($conn);
+  header("Refresh:0; url=produk.php");
 }
 
 // edit data
@@ -177,16 +178,10 @@ function edit($data){
   $stok = htmlspecialchars($data["stok"]);
   $gambar_lama = htmlspecialchars($data["gambar_lama"]);
 
-  // var_dump($id);
-  // var_dump($nama);
-  // var_dump($jenis);
-  // var_dump($deskripsi);
-  // var_dump($stok);
-  // var_dump($gambar_lama);
-  // die;
+
 
   // cek apakah user unggah gambar baru
-  if ($_FILES["gambar_baru"]["error"] === 4){
+  if ($_FILES["gambar"]["error"] === 4){
     // jika tidak mengunggah gambar baru, pake gambar lama
     $gambar = $gambar_lama;
   }else{

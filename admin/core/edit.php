@@ -64,7 +64,7 @@ if (isset($_POST["simpan"])){
     <!-- gambar kucing yang baru -->
     <div class="mb-5">
         <label for="deskripsi" class="form-label">Gambar</label> <br>
-        <input type="file" name="gambar_baru">
+        <input type="file" name="gambar">
     </div>
 
 
@@ -83,7 +83,10 @@ if (isset($_POST["simpan"])){
         title: "Data Berhasil Diubah",
         icon: "success",
         button: "OK",
-    });
+    })
+    .then((berhasil)=>{
+        location.href ='produk.php'
+    })
 </script>
 <?php endif?>
 

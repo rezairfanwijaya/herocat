@@ -21,6 +21,7 @@ if (mysqli_num_rows($query) === 0) {
 
 // tampil data
 $cats = tampil("SELECT * FROM kucing");
+
 $no = 1;
 
 // proses cari data
@@ -29,6 +30,7 @@ if (isset($_POST["btn-cari"])){
     // jika data ditemukan
     if ($cats = cari($key)){
         $cats = cari($key);
+        // $sqlTotal = mysqli_query($conn,$cats);
     }else{
         // jika data tidak ditemukan
         $noMatch = true;
@@ -46,6 +48,7 @@ if(isset($_POST["hapus"])){
 
 // menghitung jumlah data umum
 $sqlTotal = mysqli_query($conn, "SELECT COUNT(id_kucing) as total FROM kucing");
+
 $res = mysqli_fetch_assoc($sqlTotal);
 
 
