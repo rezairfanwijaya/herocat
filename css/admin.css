@@ -8,8 +8,14 @@ table tr.blue {
     background-color: #F8F8F8;
 }
 
-table td {
-    line-height: 120px;
+table tr .isi-tabel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+table tr td.desc {
+    width: 35px;
 }
 
 table td img:hover {

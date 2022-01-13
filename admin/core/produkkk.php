@@ -1,6 +1,4 @@
 <?php
-
-error_reporting(0);
 require_once('../../partial/admin.php');
 require_once('../../function/function.php');
 
@@ -41,16 +39,17 @@ if (isset($_POST["btn-cari"])){
     }
 }
 
+// hapus data
+if(isset($_POST["hapus"])){
+    $id = $_POST['id'];
+    hapus($id);
+}
 
 
-// menghitung jumlah data umum
+// menghitung jumlah data secara keseluruhan
 $sqlTotal = mysqli_query($conn, "SELECT COUNT(id_kucing) as total FROM kucing");
 
 $res = mysqli_fetch_assoc($sqlTotal);
-
-
-
-
 ?>
 
 
@@ -66,13 +65,6 @@ $res = mysqli_fetch_assoc($sqlTotal);
             </button>
         </div>
     </div>
-
-
-
-
-
-
-
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -124,7 +116,6 @@ $res = mysqli_fetch_assoc($sqlTotal);
         </div>
     </div>
     <!-- Modal tambah produk -->
-
 
     <!-- sub header -->
     <div class="sub-header mt-5 mb-3">
@@ -180,64 +171,43 @@ $res = mysqli_fetch_assoc($sqlTotal);
         <?php foreach ($cats as $cat) : ?>
 
         <tr>
-            <div class="isi-tabel">
-                <td><?= $no++ ?></td>
-                <td><?= $cat["nama_kucing"] ?></td>
-                <td><?= $cat["jenis_kucing"] ?></td>
-                <td>
-                    <img src="../../assets/adopsi/<?= $cat["gambar"] ?>" width="160px">
-                </td>
-                <td class="desc"><?= $cat["deskripsi_kucing"] ?></td>
-                <td><?= $cat["stok"] ?></td>
-                <td>
-                    <form action="" method="POST">
+            <td><?= $no++ ?></td>
+            <td><?= $cat["nama_kucing"] ?></td>
+            <td><?= $cat["jenis_kucing"] ?></td>
+            <td>
+                <img src="../../assets/adopsi/<?= $cat["gambar"] ?>" width="160px">
+            </td>
+            <td><?= $cat["deskripsi_kucing"] ?></td>
+            <td><?= $cat["stok"] ?></td>
+            <td>
+                <form action="" method="POST">
 
-                        <!-- id kucing -->
-                        <input type="hidden" name="id" value="<?=$cat["id_kucing"]?>">
+                    <!-- id kucing -->
+                    <input type="hidden" name="id" value="<?=$cat["id_kucing"]?>">
 
-                        <!-- tombol edit -->
-                        <a href="edit.php?id=<?=$cat["id_kucing"]?>" class="text-decoration-none">
-                            <button type="button" class="btn btn-success mx-3" data-bs-toggle="tooltip"
-                                data-bs-placement="bottom" title="Edit">
-                                <i class="fas fa-edit"></i>
-                            </button>
-                        </a>
-
-                        <!-- tombol hapus -->
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal"
-                            data-bs-target="#deleteModal<?=$cat["id_kucing"]?>" data-bs-placement="bottom">
-                            <i class="fas fa-trash-alt"></i>
+                    <!-- tombol edit -->
+                    <a href="edit.php?id=<?=$cat["id_kucing"]?>" class="text-decoration-none">
+                        <button type="button" class="btn btn-success mx-3" data-bs-toggle="tooltip"
+                            data-bs-placement="bottom" title="Edit">
+                            <i class="fas fa-edit"></i>
                         </button>
+                    </a>
 
-                    </form>
-                </td>
-            </div>
+                    <!-- tombol hapus -->
+                    <button type="submit" class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                        title="Hapus" name="hapus">
+                        <i class="fas fa-trash-alt"></i>
+                    </button>
+
+                </form>
+            </td>
         </tr>
-
-        <div class="modal fade" id="deleteModal<?=$cat["id_kucing"]?>" tabindex="-1" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Apakah Anda Yakin ?</h5>
-                    </div>
-                    <form action="" method="POST" enctype="multipart/form-data">
-                        <input type="hidden" name="id" value="<?=$cat["id_kucing"]?>">
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tidak</button>
-                            <button type="submit" name="hapus" class="btn btn-primary">Ya</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
 
         <?php endforeach ?>
     </table>
     <?php endif ?>
     <!-- jika data tidak kosong -->
     <!-- field tampil data -->
-
 
 
 </div>
@@ -284,5 +254,25 @@ $res = mysqli_fetch_assoc($sqlTotal);
         icon: "warning",
         button: "OK",
     });
+</script>
+<?php endif ?>
+
+<!-- notif hapus -->
+<?php if(isset($hapus)):?>
+<script>
+    swal({
+            title: "Hapus Data",
+            text: "Yakin untuk menghapus data ?",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+        .then((hapus) => {
+            if (hapus) {
+                location.href = 'donasi.php'
+            } else {
+                location.href = 'produk.php'
+            }
+        });
 </script>
 <?php endif ?>

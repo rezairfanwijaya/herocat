@@ -163,7 +163,6 @@ function hapus ($id){
   mysqli_query($conn, "DELETE FROM kucing WHERE id_kucing = $id");
 
   return mysqli_affected_rows($conn);
-  header("Refresh:0; url=produk.php");
 }
 
 // edit data
@@ -204,4 +203,9 @@ function edit($data){
 
   mysqli_query($conn, $sql);
   return mysqli_affected_rows($conn);
+}
+
+// function reload page
+function relaod(){
+  header("Refresh:0");
 }

@@ -1,12 +1,21 @@
 <?php
 require_once('../../session/admin/session_in.php');
+require_once('../../function/function.php');
 
 if (isset($_POST["logout"])) {
     require_once('../../session/logout.php');
     header('location: ../../gate/login.php');
 }
 
+// hapus data
+if(isset($_POST["hapus"])){
+    $id = $_POST['id'];
+    hapus($id);
+}
+
 ?>
+
+
 
 
 <!DOCTYPE html>
