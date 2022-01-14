@@ -37,7 +37,7 @@ if (isset($_COOKIE["level"]) && isset($_COOKIE["login"])){
 }
 
 if (isset($_SESSION["level"])){
-    header('location:../admin/index.php');
+    header('location:../admin/core/dashboard.php');
 }
 
 
@@ -61,8 +61,6 @@ if (isset($_POST["login"])) {
                 setcookie('id', $data["id_user"]);
                 setcookie("username", hash("sha256", $data["username"]), time() + 60);
             }
-
-
 
             // memilih antara admin atau user
             if ($data["level"] === 'user') {

@@ -52,7 +52,7 @@
 
                 <!-- profile -->
                 <div class="profile">
-                    <a href="#" class="text-decoration-none">
+                    <a href="user/profile.php" class="text-decoration-none">
                         M
                     </a>
                 </div>

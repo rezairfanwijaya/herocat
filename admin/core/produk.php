@@ -164,76 +164,78 @@ $res = mysqli_fetch_assoc($sqlTotal);
 
     <!-- jika data tidak kosong -->
     <?php if (isset($ada)) : ?>
-    <table class="table table-bordered text-center">
-        <thead>
+    <div class="table-responsive">
+        <table class="table table-bordered text-center">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>Jenis</th>
+                    <th>Gambar</th>
+                    <th>Deskripsi</th>
+                    <th>Stok</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+
+            <?php foreach ($cats as $cat) : ?>
+
             <tr>
-                <th>No</th>
-                <th>Nama</th>
-                <th>Jenis</th>
-                <th>Gambar</th>
-                <th>Deskripsi</th>
-                <th>Stok</th>
-                <th>Aksi</th>
-            </tr>
-        </thead>
+                <div class="isi-tabel">
+                    <td><?= $no++ ?></td>
+                    <td><?= $cat["nama_kucing"] ?></td>
+                    <td><?= $cat["jenis_kucing"] ?></td>
+                    <td>
+                        <img src="../../assets/adopsi/<?= $cat["gambar"] ?>" width="160px">
+                    </td>
+                    <td class="desc"><?= $cat["deskripsi_kucing"] ?></td>
+                    <td><?= $cat["stok"] ?></td>
+                    <td>
+                        <form action="" method="POST">
 
-        <?php foreach ($cats as $cat) : ?>
+                            <!-- id kucing -->
+                            <input type="hidden" name="id" value="<?=$cat["id_kucing"]?>">
 
-        <tr>
-            <div class="isi-tabel">
-                <td><?= $no++ ?></td>
-                <td><?= $cat["nama_kucing"] ?></td>
-                <td><?= $cat["jenis_kucing"] ?></td>
-                <td>
-                    <img src="../../assets/adopsi/<?= $cat["gambar"] ?>" width="160px">
-                </td>
-                <td class="desc"><?= $cat["deskripsi_kucing"] ?></td>
-                <td><?= $cat["stok"] ?></td>
-                <td>
-                    <form action="" method="POST">
+                            <!-- tombol edit -->
+                            <a href="edit.php?id=<?=$cat["id_kucing"]?>" class="text-decoration-none">
+                                <button type="button" class="btn btn-success mx-3" data-bs-toggle="tooltip"
+                                    data-bs-placement="bottom" title="Edit">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                            </a>
 
-                        <!-- id kucing -->
-                        <input type="hidden" name="id" value="<?=$cat["id_kucing"]?>">
-
-                        <!-- tombol edit -->
-                        <a href="edit.php?id=<?=$cat["id_kucing"]?>" class="text-decoration-none">
-                            <button type="button" class="btn btn-success mx-3" data-bs-toggle="tooltip"
-                                data-bs-placement="bottom" title="Edit">
-                                <i class="fas fa-edit"></i>
+                            <!-- tombol hapus -->
+                            <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                data-bs-target="#deleteModal<?=$cat["id_kucing"]?>" data-bs-placement="bottom">
+                                <i class="fas fa-trash-alt"></i>
                             </button>
-                        </a>
 
-                        <!-- tombol hapus -->
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal"
-                            data-bs-target="#deleteModal<?=$cat["id_kucing"]?>" data-bs-placement="bottom">
-                            <i class="fas fa-trash-alt"></i>
-                        </button>
+                        </form>
+                    </td>
+                </div>
+            </tr>
 
-                    </form>
-                </td>
-            </div>
-        </tr>
-
-        <div class="modal fade" id="deleteModal<?=$cat["id_kucing"]?>" tabindex="-1" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Apakah Anda Yakin ?</h5>
-                    </div>
-                    <form action="" method="POST" enctype="multipart/form-data">
-                        <input type="hidden" name="id" value="<?=$cat["id_kucing"]?>">
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tidak</button>
-                            <button type="submit" name="hapus" class="btn btn-primary">Ya</button>
+            <div class="modal fade" id="deleteModal<?=$cat["id_kucing"]?>" tabindex="-1"
+                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Apakah Anda Yakin ?</h5>
                         </div>
-                    </form>
+                        <form action="" method="POST" enctype="multipart/form-data">
+                            <input type="hidden" name="id" value="<?=$cat["id_kucing"]?>">
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tidak</button>
+                                <button type="submit" name="hapus" class="btn btn-primary">Ya</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <?php endforeach ?>
-    </table>
+            <?php endforeach ?>
+        </table>
+    </div>
     <?php endif ?>
     <!-- jika data tidak kosong -->
     <!-- field tampil data -->
