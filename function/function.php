@@ -144,13 +144,23 @@ function upload()
 }
 
 
-// cari data
+// cari data for admin
 function cari($keyword){
     
-    $sql = "SELECT * FROM kucing where 
+    $sql = "SELECT * FROM kucing WHERE 
         nama_kucing LIKE '%$keyword%' OR
         jenis_kucing LIKE '%$keyword%' OR
         stok LIKE '%$keyword%'
+    ";
+    
+     return tampil($sql);
+}
+
+// cari data for user
+function cariDataUser($keyword){
+    
+    $sql = "SELECT * FROM kucing WHERE 
+        nama_kucing LIKE '%$keyword%'
     ";
     
      return tampil($sql);

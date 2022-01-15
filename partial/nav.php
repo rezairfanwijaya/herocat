@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
 
@@ -7,11 +9,6 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSS Bootstrap -->
-
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
 
     <link rel="stylesheet" href="lib/node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="css/nav.css">
@@ -27,22 +24,23 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
-            <a class="navbar-brand logo" href="#">Herocat</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand logo" href="index.php">Herocat</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav mx-auto">
-                    <a class="nav-item text-decoration-none active" href="#">Home</a>
+                    <a class="nav-item text-decoration-none active" href="index.php">Home</a>
                     <a class="nav-item text-decoration-none" href="#">Adopt</a>
                     <a class="nav-item text-decoration-none" href="#">Donate</a>
                     <a class="nav-item text-decoration-none" href="#">News</a>
                 </div>
-                
+
                 <!-- search -->
                 <form action="" method="POST">
                     <div class="cari">
-                        <input type="text" name="cari" placeholder="search" autocomplete="off">
+                        <input type="text" name="cari" placeholder="Cari kucing disini" autocomplete="off">
                         <button type="submit" class="btn" name="btn-cari">
                             <ion-icon name="search" class="icon"></ion-icon>
                         </button>
@@ -57,7 +55,7 @@
                     </a>
                 </div>
                 <!-- profile -->
-                
+
             </div>
         </div>
     </nav>
@@ -83,4 +81,3 @@
     <script>
         AOS.init();
     </script>
-
