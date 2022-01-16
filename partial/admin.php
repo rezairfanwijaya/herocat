@@ -14,6 +14,7 @@ if(isset($_POST["hapus"])){
 }
 
 
+
 ?>
 
 
@@ -52,6 +53,18 @@ if(isset($_POST["hapus"])){
 
     <!-- CSS external Produk -->
     <link href="../../css/admin.css" rel="stylesheet">
+
+    <!-- tiny untuk form artikel admin -->
+    <script src="https://cdn.tiny.cloud/1/u51yxlzu6rzzlsbo9lsxoneshd5wmkt1roipja2fz5m12imf/tinymce/5/tinymce.min.js"
+        referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+            selector: '#mytextarea'
+        });
+    </script>
+
+    
+
 
 </head>
 
@@ -321,8 +334,8 @@ if(isset($_POST["hapus"])){
                 <script src="../js/sb-admin-2.js"></script>
 
                 <!-- sweet alert -->
-
                 <script src="../../lib/node_modules/sweetalert/dist/sweetalert.min.js"></script>
+               
 
 
 </body>
