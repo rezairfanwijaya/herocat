@@ -125,7 +125,10 @@ html {
     .main p.title-section {
         width: 20%;
     }
-    .main .adopsi {}
+    .main .row {
+        display: flex;
+        justify-content: center;
+    }
     .main .donasi .card {
         border: 0;
         display: flex;

@@ -192,6 +192,7 @@ function edit($data){
   // cek apakah user unggah gambar baru
   if ($_FILES["gambar"]["error"] === 4){
     // jika tidak mengunggah gambar baru, pake gambar lama
+    
     $gambar = $gambar_lama;
   }else{
     // ketika mengungah gambar baru

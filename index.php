@@ -9,7 +9,7 @@ require_once("partial/nav.php");
 require_once("function/function.php");
 
 // tampilkan data kucing adposi
-$cats = tampil("SELECT * FROM kucing");
+$cats = tampil("SELECT * FROM kucing LIMIT 3");
 
 // cek apakah tombol cari sudah di klik
 if (isset($_POST["btn-cari"])){
