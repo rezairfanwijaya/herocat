@@ -301,3 +301,38 @@ function hapusArtikel($id){
 
   return mysqli_affected_rows($conn);
 }
+
+// edit data artikel
+function editArtikel($data){
+  global $conn;
+
+  $id = $data["id"];
+  $gambarLama = $data["gambar_lama"];
+  $judul = htmlspecialchars($data["judul"]);
+  $konten = $data["artikel"];
+
+  
+  // apakah user upload gambar baru
+  if ($_FILES["gambar"]["error"] === 4){
+    $gambar = $gambarLama;
+  }else{
+    $gambar= uploadGambarArtikel();
+    if (!$gambar){
+      return false;
+    }
+  }
+
+  // jika udah siap semua tinggal update ke db
+  $sql = "UPDATE berita SET
+      judul = '$judul',
+      konten = '$konten',
+      gambar = '$gambar',
+      tanggal = current_timestamp()
+      WHERE id_berita = $id
+  ";
+
+  mysqli_query($conn, $sql);
+
+  return mysqli_affected_rows($conn);
+
+}

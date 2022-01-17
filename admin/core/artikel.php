@@ -21,6 +21,9 @@
         }
     }
 
+      // menampilkan seluruh artikel
+      $articles = tampil("SELECT * FROM berita");
+
     // cari artikel
     if (isset($_POST["btn-cari"])){
         $key = $_POST["keyword"];
@@ -35,8 +38,7 @@
     }
 
     
-      // menampilkan seluruh artikel
-      $articles = tampil("SELECT * FROM berita");
+    
 
 ?>
 
@@ -82,7 +84,7 @@
                 <img src="../../assets/artikel/<?=$artikel["gambar"]?>" class="card-img-top" alt="gambar" height="auto">
                 <div class="card-body my-3">
                     <div class="d-flex justify-content-between mb-3">
-                        <a href="edit-artikel.php?id=<?=$artikel["id_berita"]?>">
+                        <a href="detail-artikel.php?id=<?=$artikel["id_berita"]?>">
                             <h5 class="card-title text-dark"><b><?=$artikel["judul"]?></b></h5>
                         </a>
 
@@ -93,11 +95,11 @@
                         <form action="" method="POST">
                             <div class="d-flex justify-content-end">
                                 <!-- lihat -->
-                                <a href="edit-artikel.php?id=<?=$artikel["id_berita"]?>"
+                                <a href="detail-artikel.php?id=<?=$artikel["id_berita"]?>"
                                     class="btn btn-success text-white px-4">Lihat</a>
 
                                 <!-- tombol edit -->
-                                <a href="" class="text-decoration-none">
+                                <a href="edit-artikel.php?id=<?=$artikel["id_berita"]?>" class="text-decoration-none">
                                     <button type="button" class="btn btn-primary mx-3" data-bs-toggle="tooltip"
                                         data-bs-placement="bottom">
                                         <i class="fas fa-edit"></i>
