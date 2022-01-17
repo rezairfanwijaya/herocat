@@ -7,10 +7,17 @@ if (isset($_POST["logout"])) {
     header('location: ../../gate/login.php');
 }
 
-// hapus data
+// hapus data kucing
 if(isset($_POST["hapus"])){
     $id = $_POST['id'];
     hapus($id);
+}
+
+// hapus data artikel
+if (isset($_POST["hapus-artikel"])){
+    $id = $_POST["id"];
+    hapusArtikel($id);
+    $hapusSuccess = true;
 }
 
 

@@ -1,68 +1,87 @@
-        /* ################### file produk.php #################### */
-        
-        h3 {
-            margin-top: 35vh;
-        }
-        
-        table tr.blue {
-            background-color: #F8F8F8;
-        }
-        
-        table tr .isi-tabel {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        table tr td.desc {
-            width: 35px;
-        }
-        
-        table td img:hover {
-            transform: scale(2.2);
-            transition: 1s;
-        }
-        
-        .sub-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: end;
-        }
-        
-        .sub-header span {
-            font-weight: 700;
-        }
-        
-        .sub-header form {
-            display: flex;
-            justify-content: end;
-            align-items: stretch;
-        }
-        
-        .sub-header form input {
-            width: 150%;
-            padding: 7px 15px;
-            border: 1px solid #2951c3;
-            border-radius: 5px;
-        }
-        
-        .sub-header form input:focus {
-            outline: #fff;
-        }
-        
-        .sub-header form button {
-            margin-left: 110px;
-            background-color: #2951c3;
-            color: #fff;
-            border: 0;
-            height: 40px;
-            width: 40px;
-            border-radius: 5px;
-        }
-        /* ################### file produk.php #################### */
-        /* ################### file edit.php #################### */
-        
-        form.edit {
-            border-radius: 10px;
-        }
-        /* ################### file edit.php #################### */
+/* ################### file produk.php #################### */
+
+h3 {
+    margin-top: 35vh;
+}
+
+table tr.blue {
+    background-color: #F8F8F8;
+}
+
+table tr .isi-tabel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+table tr td.desc {
+    width: 35px;
+}
+
+table td img:hover {
+    transform: scale(2.2);
+    transition: 1s;
+}
+
+.sub-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.sub-header span {
+    font-weight: 700;
+}
+
+.sub-header form {
+    display: flex;
+    justify-content: end;
+    align-items: stretch;
+}
+
+.sub-header form input {
+    width: 150%;
+    padding: 7px 15px;
+    border: 1px solid #2951c3;
+    border-radius: 5px;
+}
+
+.sub-header form input:focus {
+    outline: #fff;
+}
+
+.sub-header form button {
+    margin-left: 110px;
+    background-color: #2951c3;
+    color: #fff;
+    border: 0;
+    height: 40px;
+    width: 40px;
+    border-radius: 5px;
+}
+
+
+/* ################### file produk.php #################### */
+
+
+/* ################### file edit.php #################### */
+
+form.edit {
+    border-radius: 10px;
+}
+
+
+/* ################### file edit.php #################### */
+
+.artikel {
+    border: 0;
+    box-shadow: 3px 5px 25px rgba(0, 0, 0, 5%);
+}
+
+.artikel:hover {
+    box-shadow: 3px 5px 15px rgba(0, 0, 0, 20%);
+    cursor: pointer;
+}
+
+
+/* ################# file artikel.php #################### */

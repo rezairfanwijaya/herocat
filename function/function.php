@@ -234,7 +234,6 @@ function addArticles($data){
 
   mysqli_query($conn, $sql);
   return mysqli_affected_rows($conn);
-
 }
 
 
@@ -292,4 +291,13 @@ function cariDataArtikel($key){
   $query = "SELECT * FROM berita WHERE judul LIKE '%$key%'";
   return tampil($query);
 
+}
+
+// hapus data artikel
+function hapusArtikel($id){
+  global $conn;
+
+  mysqli_query($conn, "DELETE FROM berita WHERE id_berita=$id");
+
+  return mysqli_affected_rows($conn);
 }
