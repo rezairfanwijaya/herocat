@@ -193,7 +193,7 @@ if (isset($_POST["login"])) {
     <?php if (isset($successuser)) : ?>
         <script>
             swal({
-                    title: "Behasil",
+                    title: "Berhasil",
                     icon: "success",
                     button: "OK",
                 })
@@ -210,7 +210,7 @@ if (isset($_POST["login"])) {
     <?php if (isset($successadmin)) : ?>
         <script>
             swal({
-                    title: "Behasil",
+                    title: "Berhasil",
                     icon: "success",
                     button: "OK",
                 })

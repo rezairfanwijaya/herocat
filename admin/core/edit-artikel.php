@@ -44,18 +44,21 @@
     </form>
 </div>
 
-<!-- notif save data berhasil-->
+<!-- notif edit data berhasil-->
 <?php if (isset($success)) :?>
 <script>
     swal({
         title: "Edit Artikel Berhasil",
         icon: "success",
         button: "OK",
+    })
+    .then((ok)=>{
+        location.href = 'artikel.php'
     });
 </script>
 <?php endif ?>
 
-<!-- notif save data gagal-->
+<!-- notif edit data gagal-->
 <?php if (isset($failed)) :?>
 <script>
     swal({

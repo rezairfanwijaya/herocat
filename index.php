@@ -21,7 +21,7 @@ if (isset($_POST["btn-cari"])){
     }
 }
 
-$articles = tampil("SELECT * FROM berita");
+$articles = tampil("SELECT * FROM berita LIMIT 4");
 ?>
 
 <!-- CS -->
@@ -85,13 +85,16 @@ $articles = tampil("SELECT * FROM berita");
 <section class="main container-fluid">
 
     <p class="title-section">Artikel</p>
-    <div class="row">
+    <div class="row ">
         <?php foreach ($articles as $article) : ?>
-        <div class="col-12 col-md-6" >
-            <div class="card artikel" style="width: 18rem;">
-                <img src="assets/artikel/<?=$article["gambar"]?>" class="card-img-top" alt="trik">
+        <div class="col-12 col-md-6 col-lg-6" >
+            <div class="card artikel" style="width: 90%;">
+                <img src="assets/artikel/<?=$article["gambar"]?>" class="img-fluid" style="width: 100%;">
                 <div class="card-body">
-                    <h5 class="card-title my-4 "><?= $article["judul"]?></h5>
+                    <a href="#">
+                        <h5 class="card-title my-4 text-dark"><?= $article["judul"]?></h5>
+                    </a>
+                    <p class="text-muted">Pada : <?=$article["tanggal"]?></p>
                     <a href="#" class="text-decoration-none read">Baca Selengkapnya</a>
                 </div>
             </div>
