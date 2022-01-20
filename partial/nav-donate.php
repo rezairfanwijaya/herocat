@@ -1,5 +1,7 @@
 <?php 
+    session_start();
     require_once('function/function.php');
+    require_once('partial/profile-inisial.php');
 
 ?>
 <!DOCTYPE html>
@@ -53,7 +55,7 @@
                 <!-- profile -->
                 <div class="profile">
                     <a href="user/profile.php" class="text-decoration-none">
-                        M
+                    <?php echo strtoupper(substr($nama,0,1))?>
                     </a>
                 </div>
                 <!-- profile -->

@@ -147,7 +147,7 @@ function upload()
 function cari($keyword){
     
     $sql = "SELECT * FROM kucing WHERE 
-        nama_kucing LIKE '%$keyword%' OR
+        
         jenis_kucing LIKE '%$keyword%' OR
         stok LIKE '%$keyword%'
     ";
@@ -159,7 +159,7 @@ function cari($keyword){
 function cariDataUser($keyword){
     
     $sql = "SELECT * FROM kucing WHERE 
-        nama_kucing LIKE '%$keyword%'
+        jenis_kucing LIKE '%$keyword%'
     ";
     
      return tampil($sql);

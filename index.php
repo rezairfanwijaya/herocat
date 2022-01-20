@@ -37,7 +37,7 @@ $articles = tampil("SELECT * FROM berita LIMIT 4");
             <div class="card" style="width: 18rem;">
                 <img src="assets/adopsi/<?= $cat["gambar"] ?>" class="card-img-top" alt="anggora">
                 <div class="card-body">
-                    <h5 class="card-title my-4 text-center"><?= $cat["nama_kucing"] ?></h5>
+                    <h5 class="card-title my-4 text-center"><?= $cat["jenis_kucing"] ?></h5>
                     <a href="#" class="btn text-white ">Adopsi</a>
                 </div>
             </div>
