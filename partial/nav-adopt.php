@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="lib/node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/index.css">
+    
 
     <!-- AOS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -66,7 +67,7 @@
                 <!-- profile -->
                 <div class="profile">
                     <a href="user/profile.php" class="text-decoration-none">
-                    <?php echo strtoupper(substr($nama,0,1))?>
+                    <?php echo strtoupper(substr($nama,0,1))?>z
                     </a>
                 </div>
                 <!-- profile -->
