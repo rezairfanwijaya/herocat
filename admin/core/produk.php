@@ -80,31 +80,27 @@ $res = mysqli_fetch_assoc($sqlTotal);
                     </button>
                 </div>
                 <form action="" method="POST" enctype="multipart/form-data">
-                    <div class="modal-body">
-                        <div class="mb-3">
-                            <label for="nama" class="form-label">Nama Kucing</label>
-                            <input type="text" class="form-control" id="nama" name="nama" autocomplete="off">
-                        </div>
-
+                    <div class="px-3">
                         <div class="mb-3">
                             <label for="jenis" class="form-label">Jenis Kucing</label>
-                            <input type="text" class="form-control" id="jenis" name="jenis" autocomplete="off">
+                            <input type="text" class="form-control" id="jenis" name="jenis" autocomplete="off" required>
                         </div>
 
                         <div class="mb-3">
                             <label for="deskripsi" class="form-label">Deskripsi Kucing</label>
-                            <textarea name="deskripsi" autocomplete="off" id="deskripsi"
+                            <textarea name="deskripsi" autocomplete="off" required id="deskripsi"
                                 class="form-control"></textarea>
                         </div>
 
                         <div class="mb-3">
                             <label for="stok" class="form-label">Stok</label>
-                            <input type="number" class="form-control" id="stok" name="stok" autocomplete="off">
+                            <input type="number" class="form-control" id="stok" name="stok" autocomplete="off" required>
                         </div>
 
                         <div class="mb-3">
                             <label for="gambar" class="form-label">Gambar</label>
-                            <input type="file" class="form-control" id="gambar" name="gambar" autocomplete="off">
+                            <input type="file" class="form-control-file" id="gambar" name="gambar" autocomplete="off"
+                                required>
                         </div>
 
                     </div>
@@ -120,7 +116,7 @@ $res = mysqli_fetch_assoc($sqlTotal);
 
 
     <!-- sub header -->
-    <div class="sub-header mt-5 mb-3">
+    <div class="sub-header mt-5 mb-3 container">
 
         <!-- total produk keseluruhan-->
         <div class="total-produk">
@@ -157,12 +153,11 @@ $res = mysqli_fetch_assoc($sqlTotal);
 
     <!-- jika data tidak kosong -->
     <?php if (isset($ada)) : ?>
-    <div class="table-responsive">
+    <div class="table-responsive container">
         <table class="table table-bordered text-center">
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Nama</th>
                     <th>Jenis</th>
                     <th>Gambar</th>
                     <th>Deskripsi</th>
@@ -176,7 +171,6 @@ $res = mysqli_fetch_assoc($sqlTotal);
             <tr>
                 <div class="isi-tabel">
                     <td><?= $no++ ?></td>
-                    <td><?= $cat["nama_kucing"] ?></td>
                     <td><?= $cat["jenis_kucing"] ?></td>
                     <td>
                         <img src="../../assets/adopsi/<?= $cat["gambar"] ?>" width="160px">
@@ -252,7 +246,7 @@ $res = mysqli_fetch_assoc($sqlTotal);
 <?php if (isset($succes)) :?>
 <script>
     swal({
-        title: "Data Berhasil Ditambahkan",
+        title: "Kucing Berhasil Ditambahkan",
         icon: "success",
         button: "OK",
     });
@@ -263,7 +257,7 @@ $res = mysqli_fetch_assoc($sqlTotal);
 <?php if (isset($failed)) :?>
 <script>
     swal({
-        title: "Data Gagal Ditambahkan",
+        title: "Kucing Gagal Ditambahkan",
         icon: "error",
         button: "OK",
     });

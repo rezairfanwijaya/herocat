@@ -1,15 +1,18 @@
 <?php
 
+    // import function
+    require_once('function/function.php');
+
+    // ambil data artikel
+    $articles = tampil("SELECT * from berita");
+
     // import nav
     require_once('partial/nav-news.php');
 
-    // import function
-    require_once('function/function.php');
 
     // import cs
     require_once('partial/cs.php');
 
-    $articles = tampil("SELECT * from berita");
     
 ?>
 
@@ -32,3 +35,16 @@
         <?php endforeach?>
     </div>
 </div>
+
+<!-- tampilan cari data tidak ditemukan -->
+<?php if (isset($notfound)) :?>
+<div class="error-search d-flex flex-column justify-content-center align-items-center">
+    <img src="assets/img/datanotfound.png" class="img-fluid" width="400">
+    <p style="color: #353535; margin-bottom:100px">Data tidak ditemukan. Periksa kata kunci anda</p>
+</div>
+<?php endif ?>
+<!-- tampilan cari data tidak ditemukan -->
+
+<?php 
+require_once('partial/footer.php');
+?>

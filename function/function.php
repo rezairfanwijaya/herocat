@@ -75,7 +75,6 @@ function register($data)
 function addData($data)
 {
   global $conn;
-  $nama = htmlspecialchars($data["nama"]);
   $jenis = htmlspecialchars($data["jenis"]);
   $deskripsi = htmlspecialchars($data["deskripsi"]);
   $stok = htmlspecialchars($data["stok"]);
@@ -87,7 +86,7 @@ function addData($data)
 
   $sql = "INSERT INTO kucing 
           VALUES
-          ('', '$nama', '$jenis', '$deskripsi', $stok, '$gambar')
+          ('', '$jenis', '$deskripsi', $stok, '$gambar')
   ";
 
   mysqli_query($conn, $sql);
@@ -175,13 +174,12 @@ function hapus ($id){
   return mysqli_affected_rows($conn);
 }
 
-// edit data
+// edit data kucing
 function edit($data){
   global $conn;
 
   // ambil data yang diinput user
   $id = $data["id"];
-  $nama = htmlspecialchars($data["nama"]);
   $jenis = htmlspecialchars($data["jenis"]);
   $deskripsi = htmlspecialchars($data["deskripsi"]);
   $stok = htmlspecialchars($data["stok"]);
@@ -204,7 +202,6 @@ function edit($data){
 
   // masukan data ke database
   $sql = "UPDATE kucing SET
-        nama_kucing = '$nama',
         jenis_kucing = '$jenis',
         deskripsi_kucing = '$deskripsi',
         stok = '$stok',

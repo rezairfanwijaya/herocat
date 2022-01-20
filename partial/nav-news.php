@@ -3,8 +3,8 @@
 
     if (isset($_POST['btn-cari'])){
         $key = $_POST["cari"];
-        if($cats = cariDataUser($key)){
-            $cats = cariDataUser($key);
+        if($articles = cariDataArtikel($key)){
+            $articles = cariDataArtikel($key);
         }else{
             $notfound =true;
         }

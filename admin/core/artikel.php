@@ -168,7 +168,7 @@
 <?php if (isset($success)) :?>
 <script>
     swal({
-        title: "Data Berhasil Ditambahkan",
+        title: "Artikel Berhasil Ditambahkan",
         icon: "success",
         button: "OK",
     });
@@ -179,7 +179,7 @@
 <?php if (isset($failed)) :?>
 <script>
     swal({
-        title: "Data Gagal Ditambahkan",
+        title: "Artikel Gagal Ditambahkan",
         icon: "error",
         button: "OK",
     });
@@ -191,7 +191,7 @@
 <?php if (isset($noMatch)) :?>
 <script>
     swal({
-        title: "Data Tidak Ditemukan",
+        title: "Artikel Tidak Ditemukan",
         text: "Periksa kata kunci anda!",
         icon: "warning",
         button: "OK",
@@ -203,7 +203,7 @@
 <?php if (isset($hapusSuccess)) :?>
 <script>
     swal({
-        title: "Data Berhasil Dihapus",
+        title: "Artikel Berhasil Dihapus",
         icon: "success",
         button: "OK",
     });

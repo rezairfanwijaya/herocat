@@ -24,18 +24,12 @@ if (isset($_POST["simpan"])){
 
 <form class="p-5 shadow mt-5 mx-5 edit" action="" method="POST" enctype="multipart/form-data">
 
-    <h4 class="text-center mb-5">Edit Data</h4>
+    <h4 class="text-center mb-5">Edit Data Kucing</h4>
 
     <!-- ambil id dan gambar lama -->
     <input type="hidden" name="id" value="<?=$kucing["id_kucing"]?>">
     <input type="hidden" name="gambar_lama" value="<?=$kucing["gambar"]?>">
 
-    <!-- nama kucing -->
-    <div class="mb-3">
-        <label for="nama" class="form-label">Nama Kucing</label>
-        <input type="text" name="nama" id="nama" value="<?=$kucing["nama_kucing"]?>" class="form-control"
-            autocomplete="off">
-    </div>
 
     <!-- jenis kucing -->
     <div class="mb-3">
@@ -80,7 +74,7 @@ if (isset($_POST["simpan"])){
 <?php if(isset($berhasil)) :?>
 <script>
     swal({
-        title: "Data Berhasil Diubah",
+        title: "Kucing Berhasil Diubah",
         icon: "success",
         button: "OK",
     })
@@ -94,7 +88,7 @@ if (isset($_POST["simpan"])){
 <?php if(isset($gagal)) :?>
 <script>
     swal({
-        title: "Data Gagal Diubah",
+        title: "Kucing Gagal Diubah",
         icon: "warning",
         button: "OK",
     });
