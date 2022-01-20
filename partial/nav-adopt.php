@@ -44,8 +44,8 @@
                 <div class="navbar-nav mx-auto">
                     <a class="nav-item text-decoration-none" href="index.php">Home</a>
                     <a class="nav-item text-decoration-none active" href="adopsi.php">Adopt</a>
-                    <a class="nav-item text-decoration-none" href="#">Donate</a>
-                    <a class="nav-item text-decoration-none" href="#">News</a>
+                    <a class="nav-item text-decoration-none" href="donasi.php">Donate</a>
+                    <a class="nav-item text-decoration-none" href="news.php">News</a>
                 </div>
 
                 <!-- search -->

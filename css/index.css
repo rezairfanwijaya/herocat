@@ -19,7 +19,7 @@ html {
 }
 
 .help {
-    background-color: black;
+    background-color: var(--kuning);
     width: 55px;
     height: 55px;
     border-radius: 100px;

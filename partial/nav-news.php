@@ -1,4 +1,16 @@
+<?php 
+    require_once('function/function.php');
 
+    if (isset($_POST['btn-cari'])){
+        $key = $_POST["cari"];
+        if($cats = cariDataUser($key)){
+            $cats = cariDataUser($key);
+        }else{
+            $notfound =true;
+        }
+    }
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -30,16 +42,16 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav mx-auto">
-                    <a class="nav-item text-decoration-none active" href="index.php">Home</a>
+                    <a class="nav-item text-decoration-none" href="index.php">Home</a>
                     <a class="nav-item text-decoration-none" href="adopsi.php">Adopt</a>
                     <a class="nav-item text-decoration-none" href="donasi.php">Donate</a>
-                    <a class="nav-item text-decoration-none" href="news.php">News</a>
+                    <a class="nav-item text-decoration-none active" href="news.php">News</a>
                 </div>
 
                 <!-- search -->
                 <form action="" method="POST">
                     <div class="cari">
-                        <input type="text" name="cari" placeholder="Cari kucing disini" autocomplete="off">
+                        <input type="text" name="cari" placeholder="Cari artikel disini" autocomplete="off">
                         <button type="submit" class="btn" name="btn-cari">
                             <ion-icon name="search" class="icon"></ion-icon>
                         </button>

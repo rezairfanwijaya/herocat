@@ -24,13 +24,9 @@ if (isset($_POST["btn-cari"])){
 $articles = tampil("SELECT * FROM berita LIMIT 4");
 ?>
 
-<!-- CS -->
-<a href="#" class="text-decoration-none">
-    <div class="help" data-aos="fade-up" data-aos-delay="50" data-aos-duration="2000">
-        <img src="assets/img/help.png">
-    </div>
-</a>
-<!-- CS -->
+<?php 
+    require_once('partial/cs.php');
+?>
 
 <!-- adopsi -->
 <section class="main container-fluid">

@@ -12,9 +12,11 @@
     // import session
     require_once('session/user/session_in.php');
 
-
+    //import cs
+    require_once('partial/cs.php')
     
 ?>
+
 
 <div class="container py-5">
     <h1 class="text-center text-primary">Choose <span style="background-color: #FE9A01;"> Your Favorite Cat</span></h1>
@@ -42,3 +44,7 @@
 </div>
 <?php endif ?>
 <!-- tampilan cari data tidak ditemukan -->
+
+<?php 
+require_once('partial/footer.php');
+?>
