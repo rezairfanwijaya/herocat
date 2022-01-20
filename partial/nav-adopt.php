@@ -1,4 +1,16 @@
+<?php 
+    require_once('function/function.php');
 
+    if (isset($_POST['btn-cari'])){
+        $key = $_POST["cari"];
+        if($cats = cariDataUser($key)){
+            $cats = cariDataUser($key);
+        }else{
+            $notfound =true;
+        }
+    }
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -30,8 +42,8 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav mx-auto">
-                    <a class="nav-item text-decoration-none active" href="index.php">Home</a>
-                    <a class="nav-item text-decoration-none" href="adopsi.php">Adopt</a>
+                    <a class="nav-item text-decoration-none" href="index.php">Home</a>
+                    <a class="nav-item text-decoration-none active" href="adopsi.php">Adopt</a>
                     <a class="nav-item text-decoration-none" href="#">Donate</a>
                     <a class="nav-item text-decoration-none" href="#">News</a>
                 </div>
