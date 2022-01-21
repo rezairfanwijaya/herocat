@@ -82,3 +82,48 @@ form button.adopsi {
     margin-top: 120px;
     padding: 22px 30px;
 }
+
+
+/* respoinsive */
+
+@media (min-width:770px) {
+    .gambar-kucing img {
+        width: 50%;
+    }
+    .jenis-kucing p {
+        font-size: 1.8rem;
+        width: 30%;
+    }
+    .deskripsi-kucing p.judul {
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+    .deskripsi-kucing p.deskripsi {
+        font-size: 1.5rem;
+    }
+    .deskripsi-kucing p.warning {
+        font-size: 1rem;
+        font-weight: 700;
+    }
+    form {
+        padding: 90px;
+    }
+    form label {
+        font-size: 1.5rem;
+    }
+    input::placeholder {
+        font-size: 1.3rem;
+        line-height: 100px;
+    }
+    form input {
+        height: 60px;
+    }
+    form input:focus {
+        padding: 0 20px;
+        font-size: 1.3rem;
+    }
+    form button.adopsi {
+        font-size: 1.3rem;
+        padding: 10px 30px;
+    }
+}

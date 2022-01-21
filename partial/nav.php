@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="css/index.css">
 
     <!-- AOS -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
 
 
 </head>

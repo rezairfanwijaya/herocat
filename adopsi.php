@@ -27,7 +27,7 @@
                 <img src="assets/adopsi/<?=$cat["gambar"]?>" class="card-img-top" alt="...">
                 <div class="card-body text-center py-4">
                     <h5 class="card-title mb-4"><?=$cat["jenis_kucing"]?></h5>
-                    <a href="#" class="btn btn-primary px-4" style="font-size: 1.2rem;">Adopt</a>
+                    <a href="detail-adopsi.php?id=<?=$cat["id_kucing"]?>" class="btn btn-primary px-4" style="font-size: 1.2rem;">Adopsi</a>
                 </div>
             </div>
         </div>

@@ -1,5 +1,7 @@
 <link href="css/detail-adopsi.css" rel=stylesheet>
+<link href="css/index.css" rel=stylesheet>
 <link href="lib/node_modules/bootstrap/dist/css/bootstrap.min.css" rel=stylesheet>
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 
 
@@ -7,6 +9,8 @@
 
     // function
     require_once('function/function.php');
+    require_once('partial/cs.php');
+
     $id = $_GET["id"];
 
     $cat = tampil("SELECT * FROM kucing WHERE id_kucing = $id")[0];
@@ -37,7 +41,7 @@
 
 
         <!-- form adopsi -->
-        <form>
+        <form action="" method="POST">
             <div class="mb-5">
                 <label for="nama" class="form-label">Nama Lengkap</label>
                 <input type="text" name="nama" placeholder="ex: John Cena" class="form-control" id="nama">
@@ -50,13 +54,16 @@
                 <label for="alamat" class="form-label">Alamat</label>
                 <input type="text" name="alamat" placeholder="ex: Jakarta" class="form-control" id="telpon">
             </div>
-            
+
             <button class="btn btn-primary adopsi" name="adopsi" type="submit">Adposi Sekarang</button>
         </form>
         <!-- form adopsi -->
     </div>
-
-
-
-
 </div>
+
+<?php require_once('partial/footer.php');?>
+<!-- AOS -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>

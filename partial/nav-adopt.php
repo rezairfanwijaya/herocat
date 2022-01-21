@@ -67,7 +67,7 @@
                 <!-- profile -->
                 <div class="profile">
                     <a href="user/profile.php" class="text-decoration-none">
-                    <?php echo strtoupper(substr($nama,0,1))?>z
+                    <?php echo strtoupper(substr($nama,0,1))?>
                     </a>
                 </div>
                 <!-- profile -->
