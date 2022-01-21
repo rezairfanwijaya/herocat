@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 08 Jan 2022 pada 06.54
+-- Waktu pembuatan: 21 Jan 2022 pada 04.41
 -- Versi server: 10.4.22-MariaDB
--- Versi PHP: 8.0.13
+-- Versi PHP: 7.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -55,8 +55,10 @@ CREATE TABLE `berita` (
 --
 
 INSERT INTO `berita` (`id_berita`, `judul`, `konten`, `gambar`, `tanggal`) VALUES
-(1, 'Trik Pelihara Kucing', 'Jadi begini', 'Trik Pelihara Kucing.png', '2021-12-29 08:55:00'),
-(2, 'Awas Penyakit Menular! Ini 5 Cara Menghilangkan Ja', 'Jadi begini ya ges', 'Awas Penyakit Menular.png', '2021-12-29 08:56:03');
+(3, 'Atikel Ke Tiga Diedit', '<p>isi artikel ke tiga</p>', '61e43ff7579d4.png', '2022-01-19 04:53:56'),
+(4, 'Artikel Ke Empat ', '<p>isi artikel ke empat diedit</p>', '61e588f860d02.png', '2022-01-17 15:19:27'),
+(11, 'Artikel Januari', '<p>isi artikel januari</p>', '61e79c1d3d747.png', '2022-01-19 05:05:33'),
+(13, 'Artikel Januari Minggu Pertama', '<p>Isi Artikel Januari Minggu Pertama hehe</p>', '61e9128456ab2.jpg', '2022-01-20 07:47:52');
 
 -- --------------------------------------------------------
 
@@ -81,7 +83,6 @@ CREATE TABLE `donasi` (
 
 CREATE TABLE `kucing` (
   `id_kucing` int(11) NOT NULL,
-  `nama_kucing` varchar(50) NOT NULL,
   `jenis_kucing` varchar(50) NOT NULL,
   `deskripsi_kucing` text NOT NULL,
   `stok` int(11) NOT NULL,
@@ -92,11 +93,11 @@ CREATE TABLE `kucing` (
 -- Dumping data untuk tabel `kucing`
 --
 
-INSERT INTO `kucing` (`id_kucing`, `nama_kucing`, `jenis_kucing`, `deskripsi_kucing`, `stok`, `gambar`) VALUES
-(1, 'anggora', 'anggora', 'kucing anggora', 1, 'anggora1.png'),
-(2, 'lokal', 'lokal', 'kucing lokal', 1, 'lokal1.png'),
-(3, 'persia', 'persia', 'kucing persia', 1, 'persia.png'),
-(14, 'nama', 'fjnbkj', 'jnebn', 4, '61d926fc6e2ea.png');
+INSERT INTO `kucing` (`id_kucing`, `jenis_kucing`, `deskripsi_kucing`, `stok`, `gambar`) VALUES
+(60, 'lokal', 'Berat 5kg,umur  8 bln,kelamin jantan,jenis bulu long hair ekor kemoceng,kondisi sudah di steril dan vaksin 3x.', 1, '61e2ea97bea75.png'),
+(61, 'persia', 'persia', 1, '61e3dd289e3f5.png'),
+(62, 'lokal satu', 'lokal satu', 1, '61e3dd449f7b8.png'),
+(63, 'anggora dua', 'anggora dua', 1, '61e3dd6029397.png');
 
 -- --------------------------------------------------------
 
@@ -123,7 +124,8 @@ INSERT INTO `user` (`id_user`, `username`, `password`, `gmail`, `level`) VALUES
 (11, 'reza irfan', '$2y$10$zSGefWuFUMQgE9QbRCwMxOA06TNIWsWGlvNwOkjtpRZXWcLLWV1ti', '1@gmail.com', 'user'),
 (12, 'ifan', '$2y$10$g77YqdkyPYJTLVe9Q0BVQ.oYNdJJ/vV5PMB9rf3hWkTS3.u4xywb2', '1@gmail.com', 'user'),
 (13, 'admin', '$2y$10$dFqUBs8mQPD8E2p/pjK6PeOBJDnOzHIaYtGkOD3ko1FHEv3s/Bq5G', 'admin@gmail.com', 'admin'),
-(14, 'abc', '$2y$10$Gsmkz61.hBQQDW0/9ROiS.C/1bGt8BqZoPdNTinE71uCqBqoJR4BS', 'abc@gmail.com', 'user');
+(14, 'abc', '$2y$10$Gsmkz61.hBQQDW0/9ROiS.C/1bGt8BqZoPdNTinE71uCqBqoJR4BS', 'abc@gmail.com', 'user'),
+(15, 'reza ipang reza ipin', '$2y$10$dkblmSGEIFi.naDrnGh0YetMx/nG9vlEhq42HQ6uHwEZPq89AXwNG', 'rezaipangrezaipin@gmail.com', 'user');
 
 --
 -- Indexes for dumped tables
@@ -175,7 +177,7 @@ ALTER TABLE `adopsi`
 -- AUTO_INCREMENT untuk tabel `berita`
 --
 ALTER TABLE `berita`
-  MODIFY `id_berita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_berita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT untuk tabel `donasi`
@@ -187,13 +189,13 @@ ALTER TABLE `donasi`
 -- AUTO_INCREMENT untuk tabel `kucing`
 --
 ALTER TABLE `kucing`
-  MODIFY `id_kucing` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_kucing` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
