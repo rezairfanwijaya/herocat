@@ -67,7 +67,7 @@ $articles = tampil("SELECT * FROM berita LIMIT 4");
                 <div class="card-body">
                     <h5 class="card-title my-4 text-center donasi">Kepedulian Anda akan nasib kucing jalanan dapat
                         disalurkan dengan memberikan donasi untuk kucing jalanan</h5>
-                    <a href="#" class="btn donasi">Donate now</a>
+                    <a href="donasi.php" class="btn donasi">Donate now</a>
                 </div>
             </div>
         </div>

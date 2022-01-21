@@ -41,17 +41,6 @@
                     <a class="nav-item text-decoration-none" href="news.php">News</a>
                 </div>
 
-                <!-- search -->
-                <form action="" method="POST">
-                    <div class="cari">
-                        <input type="text" name="cari" placeholder="Cari kucing disini" autocomplete="off">
-                        <button type="submit" class="btn" name="btn-cari">
-                            <ion-icon name="search" class="icon"></ion-icon>
-                        </button>
-                    </div>
-                </form>
-                <!-- search -->
-
                 <!-- profile -->
                 <div class="profile">
                     <a href="user/profile.php" class="text-decoration-none">
