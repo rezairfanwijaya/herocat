@@ -9,6 +9,7 @@
 
     // function
     require_once('function/function.php');
+    require_once('partial/nav-detail-adopt.php');
     require_once('partial/cs.php');
 
     $id = $_GET["id"];
