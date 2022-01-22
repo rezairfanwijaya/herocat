@@ -86,13 +86,19 @@ form button.donasi {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background-color: red;
     }
     form .metode:hover {
+        /* border: 2px solid #FE9A01; */
+        /* background-color: #0e5095; */
+        background-color: #fff;
         border: 2px solid #FE9A01;
     }
     form .metode img {
         width: 20%;
+    }
+    form .metode input:focus {
+        background-color: #fff;
+        border: 2px solid #FE9A01;
     }
     form button.donasi {
         margin: 30px auto;

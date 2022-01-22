@@ -8,6 +8,10 @@
     require_once('partial/nav-donate.php');
 
     require_once('partial/cs.php');
+
+    if (isset($_POST["donasi"])){
+        var_dump($_POST);
+    }
 ?>
 
 <div class="container-fluid my-4">
@@ -60,22 +64,22 @@
         <!-- BRI -->
         <div class="mb-3 bri metode">
             <img src="assets/img/BRI.png">
-            <input type="radio" name="bri" autocomplete="off">
+            <input type="radio" name="metode" value="bri" autocomplete="off">
         </div>
         
-        <!-- BRI -->
+        <!-- bni -->
         <div class="mb-3 bni metode">
             <img src="assets/img/BNI.png">
-            <input type="radio" name="bri" autocomplete="off">
+            <input type="radio" name="medote" value="bni" autocomplete="off">
         </div>
         
-        <!-- BRI -->
+        <!-- bca -->
         <div class="mb-5 bca metode">
             <img src="assets/img/BCA.png">
-            <input type="radio" name="bri" autocomplete="off">
+            <input type="radio" name="metode" value="bca" autocomplete="off">
         </div>
         
-        <button type="submit" class="btn donasi btn-primary px-5">Donasi</button>
+        <button type="submit" name="donasi" class="btn donasi btn-primary px-5">Donasi</button>
     </form>
     <!-- form  -->
 </div>
