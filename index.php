@@ -87,11 +87,11 @@ $articles = tampil("SELECT * FROM berita LIMIT 4");
             <div class="card artikel" style="width: 90%;">
                 <img src="assets/artikel/<?=$article["gambar"]?>" class="img-fluid" style="width: 100%;">
                 <div class="card-body">
-                    <a href="#">
+                    <a href="detail-artikel.php?id=<?=$article["id_berita"]?>">
                         <h5 class="card-title my-4 text-dark"><?= $article["judul"]?></h5>
                     </a>
-                    <p class="text-muted">Pada : <?=$article["tanggal"]?></p>
-                    <a href="#" class="text-decoration-none read">Baca Selengkapnya</a>
+                    <p class="text-muted">Pada : <?=date('d F Y', strtotime($article["tanggal"]))?></p>
+                    <a href="detail-artikel.php?id=<?=$article["id_berita"]?>" class="text-decoration-none read">Baca Selengkapnya</a>
                 </div>
             </div>
         </div>

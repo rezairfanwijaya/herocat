@@ -24,11 +24,11 @@
             <div class="card artikel" style="width: 95%; margin:auto; background-color:#C9E4FF; border: 0">
                 <img src="assets/artikel/<?=$article["gambar"]?>" class="card-img-top" alt="...">
                 <div class="card-body py-5">
-                    <a href="#">
+                    <a href="detail-artikel.php?id=<?=$article["id_berita"]?>">
                         <h5 class="card-title mb-4 text-dark"><?=$article["judul"]?></h5>
                     </a>
-                    <p class="text-muted">Pada : <?=$article["tanggal"]?></p>
-                    <a href="#" style="font-size: 0.9rem; float:right">Baca Selengkapnya</a>
+                    <p class="text-muted">Pada : <?= date('d F Y', strtotime($article["tanggal"])) ?></p>
+                    <a href="detail-artikel.php?id=<?=$article["id_berita"]?>" style="font-size: 0.9rem; float:right">Baca Selengkapnya</a>
                 </div>
             </div>
         </div>

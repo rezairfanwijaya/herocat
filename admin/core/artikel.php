@@ -88,7 +88,7 @@
                             <h5 class="card-title text-dark"><b><?=$artikel["judul"]?></b></h5>
                         </a>
 
-                        <p>Dibuat pada : <?=$artikel["tanggal"]?></p>
+                        <p>Dibuat pada : <?=date('d F Y', strtotime($artikel["tanggal"]))?></p>
                     </div>
                     <div class="aksi">
                         <!-- Tombol -->

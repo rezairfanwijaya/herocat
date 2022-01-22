@@ -1,6 +1,7 @@
 <?php 
     session_start();
     require_once('../function/function.php');
+    
 
     // ambil user yang login
     $id = $_SESSION["id"];
