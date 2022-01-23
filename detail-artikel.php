@@ -21,15 +21,20 @@ $tanggal = date('d F Y', strtotime($article["tanggal"]));
     .lainnya:hover {
         box-shadow: 2px 3px 15px rgba(0, 0, 0, 30%);
     }
+    .content{
+        width: 90%;
+        text-align: justify;
+        line-height: 33px;
+    }
 </style>
 
-<div class="container-fluid px-md-5 py-2 d-flex justify-content-between flex-wrap">
+<div class="container-fluid px-md-5 py-2 d-flex justify-content-between flex-lg-nowrap flex-wrap ">
 
-    <div class="side-kiri d-flex flex-column flex-grow-1 px-2">
+    <div class="side-kiri d-flex flex-column flex-grow-1 px-2" >
         <!-- gambar -->
         <div class="gambar my-3">
             <img src="assets/artikel/<?=$article["gambar"]?>" alt="gambar"
-                style="width: 70%; display:grid; margin:auto">
+                style="width: 70%; display:grid; margin:auto;">
         </div>
         <!-- gambar -->
 

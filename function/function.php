@@ -370,7 +370,7 @@ function donasi($data){
   // masukan data ke db
   $sql = "INSERT INTO donasi
             VALUES
-          ('','$nama', '$telpon', $nominal, '$norek', '$id_user', '$metode')
+          ('','$nama', '$telpon', $nominal, '$norek', '$id_user', '$metode', current_timestamp())
   ";
 
   mysqli_query($conn, $sql);

@@ -24,7 +24,9 @@ require_once('../partial/profile-inisial.php');
 
 
 </head>
-
+<style>
+    
+</style>
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark">

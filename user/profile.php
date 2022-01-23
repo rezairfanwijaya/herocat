@@ -9,6 +9,18 @@
     $query = mysqli_query($conn, "SELECT * FROM user WHERE id_user = $id");
     $user = mysqli_fetch_assoc($query);
 
+    // aktifitas terakhir user
+    // donasi
+    $sqlDonasi = "SELECT * FROM donasi
+                    JOIN user ON donasi.id_user = user.id_user
+                    WHERE user.id_user = $id
+                    ORDER BY donasi.id_donasi DESC
+                    
+    ";
+
+    $donasi = tampil($sqlDonasi);
+    
+
     // logout
     if (isset($_POST["keluar"])){
         require_once('../session/logout.php');
@@ -31,15 +43,26 @@
     <title>Profile | <?=$user["username"]?> </title>
 </head>
 <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
+body {
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+}
+
+html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
     body {
         background-color: #F5F5F5;
     }
 
-    .list{
+    .list {
         background-color: #fff;
-        
+
     }
-    .list:hover{
+
+    .list:hover {
         border: 1px solid #007cfe;
         background-color: #C4DFFC;
         transition: .3s;
@@ -48,7 +71,7 @@
 
 <body>
     <div class="welcome text-center my-5">
-        <h2>Hallo Selamat Datang <?=$user["username"]?></h2>
+        <h2>Hallo  <?=$user["username"]?></h2>
     </div>
 
     <!-- Aktifitas Terakhir -->
@@ -57,26 +80,25 @@
             <h3>Aktifitas Terakhir</h3>
         </div>
 
+        <?php foreach($donasi as $d):?>
         <div class="list my-3  shadow-sm rounded-1 p-4">
-            Anda Berdonasi sebesar Rp 6000
+            Anda Berdonasi sebesar Rp <?= number_format($d["nominal"],0,',','.') ?> Pada <?=$d["tanggal"]?>
         </div>
-        <div class="list my-3  shadow-sm rounded-1 p-4">
-            Anda Berdonasi sebesar Rp 6000
-        </div>
-        <div class="list my-3  shadow-sm rounded-1 p-4">
-            Anda Berdonasi sebesar Rp 6000
-        </div>
+        <?php endforeach?>
+
     </div>
     <!-- Aktifitas Terakhir -->
 
 
-    <div class="tombol d-flex justify-content-center mt-5">
+    <!-- button -->
+    <div class="tombol d-flex justify-content-center my-3">
         <a href="../index.php" class="text-decoration-none btn btn-success text-white mx-3">Beranda</a>
         <form action="" method="POST">
             <button class="keluar btn btn-danger" type="button" name="keluar" data-bs-toggle="modal"
                 data-bs-target="#keluar">Keluar</button>
         </form>
     </div>
+    <!-- button -->
 
 
 
