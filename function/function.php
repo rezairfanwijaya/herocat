@@ -344,7 +344,7 @@ function donasi($data){
   $norek = $data["norek"];
 
   // minimal donasi adalah 5000
-  if ($nominal < 5000){
+  if ($nominal < 1000){
     echo '
     <div class="alert alert-warning alert-dismissible fade show sticky-top" role="alert">
     <strong>Mohon maaf!</strong> Minimal donasi adalah Rp 10.000
