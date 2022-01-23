@@ -333,3 +333,49 @@ function editArtikel($data){
   return mysqli_affected_rows($conn);
 
 }
+
+// donasi
+function donasi($data){
+  global $conn;
+  $id_user = $data["id_user"];
+  $nama = $data["nama"];
+  $telpon = $data["telpon"];
+  $nominal = $data["nominal"];
+  $norek = $data["norek"];
+
+  // minimal donasi adalah 5000
+  if ($nominal < 5000){
+    echo '
+    <div class="alert alert-warning alert-dismissible fade show sticky-top" role="alert">
+    <strong>Mohon maaf!</strong> Minimal donasi adalah Rp 10.000
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+    ';
+    return false;
+  }
+
+  // cek apakah memasukan metode donasi
+  if (!isset($data["metode"])){
+    echo '
+    <div class="alert alert-warning alert-dismissible fade show sticky-top" role="alert">
+    <strong>Mohon maaf!</strong> Pilih metode donasi terlebih dahulu
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+    ';
+    return false;
+  }else{
+    $metode = $data["metode"];
+  }
+
+  // masukan data ke db
+  $sql = "INSERT INTO donasi
+            VALUES
+          ('','$nama', '$telpon', $nominal, '$norek', '$id_user', '$metode')
+  ";
+
+  mysqli_query($conn, $sql);
+
+  return mysqli_affected_rows($conn);
+
+
+}

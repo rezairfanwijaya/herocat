@@ -9,8 +9,15 @@
 
     require_once('partial/cs.php');
 
+    // id user
+    $id_user = $_SESSION["id"];
+
     if (isset($_POST["donasi"])){
-        var_dump($_POST);
+        if (donasi($_POST)>0){
+            $succes = true;
+        }else{
+            $failed = true;
+        }
     }
 ?>
 
@@ -33,29 +40,34 @@
     <!-- form  -->
     <form action="" method="POST" class="my-5">
 
-    <!-- nama -->
+        <!-- id user -->
+        <input type="hidden" name="id_user" value="<?=$id_user?>">
+
+        <!-- nama -->
         <div class="mb-3">
             <label for="nama" class="form-label">Nama Lengkap</label>
-            <input type="text" name="nama" placeholder="ex: John Cena" class="form-control" id="nama" autocomplete="off">
+            <input type="text" name="nama" placeholder="ex: John Cena" class="form-control" id="nama" autocomplete="off"
+                required>
         </div>
 
         <!-- telpon -->
         <div class="mb-3">
             <label for="telpon" class="form-label">Nomor Telpon</label>
-            <input type="number" name="telpon" placeholder="ex: 0838xxxxxx" class="form-control" id="telpon" autocomplete="off">
+            <input type="number" name="telpon" placeholder="ex: 0838xxxxxx" class="form-control" id="telpon"
+                autocomplete="off" required>
         </div>
 
         <!-- nominal -->
         <div class="mb-3">
             <label for="nominal" class="form-label">Nominal Donasi</label>
-            <input type="number" name="nominal" class="form-control" id="nominal" min="1" autocomplete="off">
-            <div class="form-text text-danger">Minimal donasi adalah Rp1</div>
+            <input type="number" name="nominal" class="form-control" id="nominal" min="1" autocomplete="off" required>
         </div>
 
         <!-- rekening tujuan -->
         <div class="mb-4">
             <label for="norek" class="form-label">Rekening Tujuan</label>
-            <input type="text" readonly name="norek" class="form-control" id="norek" value="08343437346" autocomplete="off">
+            <input type="text" readonly name="norek" class="form-control" id="norek" value="08343437346"
+                autocomplete="off">
         </div>
 
 
@@ -66,26 +78,53 @@
             <img src="assets/img/BRI.png">
             <input type="radio" name="metode" value="bri" autocomplete="off">
         </div>
-        
+
         <!-- bni -->
         <div class="mb-3 bni metode">
             <img src="assets/img/BNI.png">
-            <input type="radio" name="medote" value="bni" autocomplete="off">
+            <input type="radio" name="metode" value="bni" autocomplete="off">
         </div>
-        
+
         <!-- bca -->
         <div class="mb-5 bca metode">
             <img src="assets/img/BCA.png">
             <input type="radio" name="metode" value="bca" autocomplete="off">
         </div>
-        
+
         <button type="submit" name="donasi" class="btn donasi btn-primary px-5">Donasi</button>
     </form>
     <!-- form  -->
 </div>
 
+
+<!-- notif donasi berhasil-->
+<?php if (isset($succes)) :?>
+<script>
+    swal({
+        title: "Donasi Berhasil",
+        icon: "success",
+        button: "OK",
+    })
+    .then((donasi)=>{
+        location.href='user/profile.php'
+    });
+</script>
+<?php endif ?>
+
+<!-- notif donasi gagal-->
+<?php if (isset($failed)) :?>
+<script>
+    swal({
+        title: "Donasi Gagal",
+        icon: "error",
+        button: "OK",
+    });
+</script>
+<?php endif ?>
+
+
+
+
+
 <!-- footer -->
 <?php require_once('partial/footer.php');?>
-
-
-

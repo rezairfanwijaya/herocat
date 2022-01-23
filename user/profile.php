@@ -1,6 +1,7 @@
 <?php 
     session_start();
-    require_once('../function/function.php');
+    
+    require_once('../partial/nav-profile.php');
     
 
     // ambil user yang login
@@ -33,6 +34,16 @@
     body {
         background-color: #F5F5F5;
     }
+
+    .list{
+        background-color: #fff;
+        
+    }
+    .list:hover{
+        border: 1px solid #007cfe;
+        background-color: #C4DFFC;
+        transition: .3s;
+    }
 </style>
 
 <body>
@@ -40,34 +51,59 @@
         <h2>Hallo Selamat Datang <?=$user["username"]?></h2>
     </div>
 
-    <div class="tombol d-flex justify-content-center">
+    <!-- Aktifitas Terakhir -->
+    <div class="container my-5">
+        <div class="aktifitas">
+            <h3>Aktifitas Terakhir</h3>
+        </div>
+
+        <div class="list my-3  shadow-sm rounded-1 p-4">
+            Anda Berdonasi sebesar Rp 6000
+        </div>
+        <div class="list my-3  shadow-sm rounded-1 p-4">
+            Anda Berdonasi sebesar Rp 6000
+        </div>
+        <div class="list my-3  shadow-sm rounded-1 p-4">
+            Anda Berdonasi sebesar Rp 6000
+        </div>
+    </div>
+    <!-- Aktifitas Terakhir -->
+
+
+    <div class="tombol d-flex justify-content-center mt-5">
         <a href="../index.php" class="text-decoration-none btn btn-success text-white mx-3">Beranda</a>
         <form action="" method="POST">
-            <button class="keluar btn btn-danger" type="button" name="keluar" data-bs-toggle="modal" data-bs-target="#keluar">Keluar</button>
+            <button class="keluar btn btn-danger" type="button" name="keluar" data-bs-toggle="modal"
+                data-bs-target="#keluar">Keluar</button>
         </form>
     </div>
 
+
+
+
     <!-- notif keluar -->
     <div class=" modal fade" id="keluar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Lanjutkan Keluar ?</h5>
-                        </div>
-                        <form action="" method="POST">
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tidak</button>
-                                <button type="submit" name="keluar" class="btn btn-primary">Ya</button>
-                            </div>
-                        </form>
-                    </div>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Lanjutkan Keluar ?</h5>
                 </div>
+                <form action="" method="POST">
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tidak</button>
+                        <button type="submit" name="keluar" class="btn btn-primary">Ya</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
+
+
 
 </body>
 
