@@ -17,8 +17,18 @@
                     ORDER BY donasi.id_donasi DESC
                     
     ";
-
     $donasi = tampil($sqlDonasi);
+
+    // adopsi
+    $sqlAdopsi = "SELECT kucing.jenis_kucing as jenis, adopsi.tanggal as tanggal FROM adopsi
+                    JOIN user ON adopsi.id_user = user.id_user
+                    JOIN kucing ON adopsi.id_kucing = kucing.id_kucing
+                    WHERE user.id_user = $id
+                    ORDER BY adopsi.id_adopsi DESC
+                    
+    ";
+    $adopsi = tampil($sqlAdopsi);
+    
     
 
     // logout
@@ -82,7 +92,13 @@ html {
 
         <?php foreach($donasi as $d):?>
         <div class="list my-3  shadow-sm rounded-1 p-4">
-            Anda Berdonasi sebesar Rp <?= number_format($d["nominal"],0,',','.') ?> Pada <?=$d["tanggal"]?>
+            Anda berhasil <b>berdonasi</b> sebesar Rp <?= number_format($d["nominal"],0,',','.') ?> Pada <?=$d["tanggal"]?>
+        </div>
+        <?php endforeach?>
+
+        <?php foreach($adopsi as $a):?>
+        <div class="list my-3  shadow-sm rounded-1 p-4">
+            Anda berhasil <b>mengadopsi</b> kucing jenis <?=$a["jenis"]?> Pada <?=$a["tanggal"]?>
         </div>
         <?php endforeach?>
 
