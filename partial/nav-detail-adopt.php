@@ -57,6 +57,9 @@ require_once('partial/profile-inisial.php');
 
 
 
+    
+     <!-- sweet alert -->
+     <script src="lib/node_modules/sweetalert/dist/sweetalert.min.js"></script>
 
     <!-- jquery -->
     <script src="lib/node_modules/jquery/dist/jquery.min.js"></script>

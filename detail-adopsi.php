@@ -12,10 +12,21 @@
     require_once('partial/nav-detail-adopt.php');
     require_once('partial/cs.php');
 
-    $id = $_GET["id"];
+    $id_user = $_SESSION['id'];
+    $id_kucing = $_GET["id"];
 
-    $cat = tampil("SELECT * FROM kucing WHERE id_kucing = $id")[0];
-    
+
+    $cat = tampil("SELECT * FROM kucing WHERE id_kucing = $id_kucing")[0];
+
+    // cek ketika tombol adopsi di klik
+    if (isset($_POST["adopsi"])){
+        // save data ke db dan muncul notif
+        if (adopsi($_POST)>0){
+            $succes = true;
+        }else{
+            $failed = true;
+        }
+    }
     
 ?>
 
@@ -43,17 +54,21 @@
 
         <!-- form adopsi -->
         <form action="" method="POST">
+            <!-- id user -->
+            <input type="hidden" name="id_user" value="<?=$id_user?>">
+            <!-- id kucing -->
+            <input type="hidden" name="id_kucing" value="<?=$id_kucing?>">
             <div class="mb-5">
                 <label for="nama" class="form-label">Nama Lengkap</label>
-                <input type="text" name="nama" placeholder="ex: John Cena" class="form-control" id="nama">
+                <input type="text" name="nama" placeholder="ex: John Cena" class="form-control" id="nama" required>
             </div>
             <div class="mb-5">
-                <label for="telpon" class="form-label">No. Telpon</label>
-                <input type="number" name="no-telp" placeholder="ex: 0838xxxxxx" class="form-control" id="telpon">
+                <label for="telpon" class="form-label">No. Telepon</label>
+                <input type="number" name="telpon" placeholder="ex: 0838xxxxxx" class="form-control" id="telpon" required>
             </div>
             <div class="mb-5">
                 <label for="alamat" class="form-label">Alamat</label>
-                <input type="text" name="alamat" placeholder="ex: Jakarta" class="form-control" id="telpon">
+                <input type="text" name="alamat" placeholder="ex: Jakarta" class="form-control" id="alamat" required>
             </div>
 
             <button class="btn btn-primary adopsi" name="adopsi" type="submit">Adposi Sekarang</button>
@@ -61,6 +76,37 @@
         <!-- form adopsi -->
     </div>
 </div>
+
+
+
+<!-- notif adopsi berhasil-->
+<?php if (isset($succes)) :?>
+<script>
+    swal({
+        title: "Adopsi Berhasil",
+        icon: "success",
+        button: "OK",
+    })
+    .then((adopsi)=>{
+        location.href='user/profile.php'
+    });
+</script>
+<?php endif ?>
+
+<!-- notif adopsi gagal-->
+<?php if (isset($failed)) :?>
+<script>
+    swal({
+        title: "Adopsi Gagal",
+        icon: "error",
+        button: "OK",
+    });
+</script>
+<?php endif ?>
+
+
+
+
 
 <?php require_once('partial/footer.php');?>
 <!-- AOS -->

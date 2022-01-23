@@ -379,3 +379,27 @@ function donasi($data){
 
 
 }
+
+// adopsi
+function adopsi($data){
+  global $conn;
+
+  // ambil data dari user
+  $id_user = $data["id_user"];
+  $id_kucing = $data["id_kucing"];
+  $nama = htmlspecialchars($data["nama"]);
+  $telpon = htmlspecialchars($data["telpon"]);
+  $alamat = htmlspecialchars($data["alamat"]);
+
+
+  // input data ke db
+  $sql = "INSERT INTO adopsi
+            VALUES 
+          ('', '$nama', '$telpon', '$alamat', '$id_kucing', '$id_user', current_timestamp())
+  ";
+
+  mysqli_query($conn, $sql);
+  return mysqli_affected_rows($conn);
+}
+
+
