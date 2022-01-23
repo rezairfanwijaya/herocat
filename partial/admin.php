@@ -102,6 +102,14 @@ if (isset($_POST["hapus-artikel"])){
 
             <!-- Produk -->
             <li class="nav-item ">
+                <a class="nav-link collapsed" href="pengguna.php">
+                <i class="fas fa-users"></i>
+                    <span>Pengguna</span>
+                </a>
+            </li>
+
+            <!-- Produk -->
+            <li class="nav-item ">
                 <a class="nav-link collapsed" href="produk.php">
                     <i class="fas fa-database fa-cog"></i>
                     <span>Produk</span>
