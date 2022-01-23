@@ -60,7 +60,7 @@
         <!-- nominal -->
         <div class="mb-3">
             <label for="nominal" class="form-label">Nominal Donasi</label>
-            <input type="number" name="nominal" class="form-control" id="nominal" min="1000" autocomplete="off" required>
+            <input type="number" name="nominal" class="form-control" id="nominal"  autocomplete="off" required>
         </div>
 
         <!-- rekening tujuan -->
