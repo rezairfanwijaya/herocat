@@ -76,19 +76,19 @@
         <!-- BRI -->
         <div class="mb-3 bri metode">
             <img src="assets/img/BRI.png">
-            <input type="radio" name="metode" value="bri" autocomplete="off">
+            <input type="radio" name="metode" value="BRI" autocomplete="off">
         </div>
 
         <!-- bni -->
         <div class="mb-3 bni metode">
             <img src="assets/img/BNI.png">
-            <input type="radio" name="metode" value="bni" autocomplete="off">
+            <input type="radio" name="metode" value="BNI" autocomplete="off">
         </div>
 
         <!-- bca -->
         <div class="mb-5 bca metode">
             <img src="assets/img/BCA.png">
-            <input type="radio" name="metode" value="bca" autocomplete="off">
+            <input type="radio" name="metode" value="BCA" autocomplete="off">
         </div>
 
         <button type="submit" name="donasi" class="btn donasi btn-primary px-5">Donasi</button>

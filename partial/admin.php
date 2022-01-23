@@ -24,9 +24,6 @@ if (isset($_POST["hapus-artikel"])){
 
 ?>
 
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
