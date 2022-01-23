@@ -5,6 +5,8 @@
     $sql = mysqli_query($conn, "SELECT * FROM donasi");
     if (mysqli_num_rows($sql) === 0){
         $kosong = true;
+    }else{
+        $ada = true;
     }
 
     // ambil data donasi
@@ -33,6 +35,7 @@
 <!-- jika data kosong -->
 
 <!-- jika ada data -->
+<?php if (isset($ada)) :?>
 <div class="container">
     <h5 class="mt-5">Total Donasi :Rp <?=number_format($totalDonasi["total"],0,',','.')?> </h5>
     <div class="table-responsive">
@@ -60,4 +63,5 @@
         </table>
     </div>
 </div>
+<?php endif?>
 <!-- jika ada data -->
