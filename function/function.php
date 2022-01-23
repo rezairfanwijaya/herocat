@@ -347,7 +347,7 @@ function donasi($data){
   if ($nominal < 1000){
     echo '
     <div class="alert alert-warning alert-dismissible fade show sticky-top" role="alert">
-    <strong>Mohon maaf!</strong> Minimal donasi adalah Rp 10.000
+    <strong>Mohon maaf!</strong> Minimal donasi adalah Rp 1.000
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
     ';
