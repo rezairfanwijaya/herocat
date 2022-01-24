@@ -19,9 +19,39 @@
 
     $adopsi = tampil($sql);
     $no = 1;
-    // print_r($adopsi);
 
 ?>
+
+<!-- hapus data -->
+<div class="d-flex justify-content-end container">
+
+    <button type="button" class="btn btn-danger px-4" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Hapus
+    </button>
+
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Hapus Data</h5>
+        
+      </div>
+      <div class="modal-body">
+        Dengan menekan hapus semua data akan hilang
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+        <form action="" method="POST">
+            <button type="submit" name="delete" class="btn btn-danger">Hapus</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- hapus data -->
 
 
 <!-- jika data kosong -->
@@ -34,7 +64,7 @@
 <!-- jika ada data -->
 <?php if (isset($ada)) :?>
 <div class="container">
-    
+
     <div class="table-responsive">
         <table class="table table-bordered text-center my-3">
             <tr>
@@ -66,3 +96,14 @@
 </div>
 <?php endif?>
 <!-- jika ada data -->
+
+<!-- notif hapus data berhasil-->
+<?php if (isset($succes)) :?>
+<script>
+    swal({
+        title: "Data Berhasil Dihapus",
+        icon: "success",
+        button: "OK",
+    });
+</script>
+<?php endif ?>

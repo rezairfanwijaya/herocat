@@ -20,6 +20,18 @@ if (isset($_POST["hapus-artikel"])){
     $hapusSuccess = true;
 }
 
+  // hapus data adopsi
+  if (isset($_POST["delete"])){
+    mysqli_query($conn, "TRUNCATE adopsi");
+    $succes = true;
+}
+
+  // hapus data donasi
+  if (isset($_POST["kosongkan"])){
+    mysqli_query($conn, "TRUNCATE donasi");
+    $succes = true;
+}
+
 
 
 ?>

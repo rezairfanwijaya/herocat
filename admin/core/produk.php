@@ -205,7 +205,7 @@ $res = mysqli_fetch_assoc($sqlTotal);
                             <input type="hidden" name="id" value="<?=$cat["id_kucing"]?>">
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tidak</button>
-                                <button type="submit" name="hapus" class="btn btn-primary">Ya</button>
+                                <button type="submit" name="hapus" class="btn btn-danger">Ya</button>
                             </div>
                         </form>
                     </div>
