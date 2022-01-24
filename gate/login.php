@@ -131,13 +131,13 @@ if (isset($_POST["login"])) {
             <div class="username form mb-4">
                 <label for="username" class="mb-2">Username</label>
                 <br>
-                <input type="text" name="username" placeholder="ex : Clarissa" id="username" autocomplete="off">
+                <input type="text" name="username" placeholder="ex : Clarissa" id="username" autocomplete="off" required>
             </div>
 
             <div class="password form mb-2">
                 <label for="password" class="mb-2">password</label>
                 <br>
-                <input type="password" name="password" id="password" autocomplete="off">
+                <input type="password" name="password" id="password" autocomplete="off" required>
                 <img src="../assets/img/see.png" alt="see" class="icon" onclick="see(true)">
                 <img src="../assets/img/hide.png" alt="see" class="icon" onclick="see(false)">
             </div>
@@ -193,7 +193,7 @@ if (isset($_POST["login"])) {
     <?php if (isset($successuser)) : ?>
         <script>
             swal({
-                    title: "Berhasil",
+                    title: "Login berhasil",
                     icon: "success",
                     button: "OK",
                 })
@@ -210,7 +210,7 @@ if (isset($_POST["login"])) {
     <?php if (isset($successadmin)) : ?>
         <script>
             swal({
-                    title: "Berhasil",
+                    title: "Login berhasil",
                     icon: "success",
                     button: "OK",
                 })
