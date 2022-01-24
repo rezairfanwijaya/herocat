@@ -18,6 +18,10 @@ $totalDonasi = mysqli_fetch_assoc($sqlDonasi);
 $sqlDonasi = mysqli_query($conn, "SELECT COUNT(id_adopsi) as total from adopsi");
 $totalAdopsi = mysqli_fetch_assoc($sqlDonasi);
 
+// total kucing
+$sqlKucing = mysqli_query($conn, "SELECT COUNT(id_kucing) as total from kucing");
+$totalKucing = mysqli_fetch_assoc($sqlKucing);
+
 
 
 
@@ -116,6 +120,25 @@ $totalAdopsi = mysqli_fetch_assoc($sqlDonasi);
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-newspaper fa-2x text-gray-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- total artikel -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <a href="produk.php" class="text-decoration-none">
+                <div class="card border-left-danger shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
+                                    Total Kucing</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800"><?=$totalKucing["total"]?> Ekor</div>
+                            </div>
+                            <div class="col-auto">
+                            <i class="fas fa-cat fa-2x text-gray-300"></i>
                             </div>
                         </div>
                     </div>
