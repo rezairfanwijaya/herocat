@@ -218,10 +218,22 @@ function edit($data){
 function addArticles($data){
   global $conn;
   $judul = htmlspecialchars($data["judul"]);
-  $konten = $data["artikel"];
   $gambar = uploadGambarArtikel();
   if (!$gambar){
     return false;
+  }
+
+  // jika isi artikel kosong
+  if ($_POST["artikel"]===""){
+    echo '
+    <div class="alert alert-warning alert-dismissible fade show sticky-top" role="alert">
+    <strong>Mohon maaf!</strong> Isi artikel tidak boleh kosong
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+    ';
+    return false;
+  }else{
+    $konten = $data["artikel"];
   }
 
   
@@ -401,5 +413,3 @@ function adopsi($data){
   mysqli_query($conn, $sql);
   return mysqli_affected_rows($conn);
 }
-
-

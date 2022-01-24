@@ -1,3 +1,5 @@
+
+
 <?php 
     require_once('../../partial/admin.php');
     require_once('../../function/function.php');
@@ -43,13 +45,16 @@
 ?>
 
 
+
+
 <div class="container my-5">
 
     <form action="" method="POST" enctype="multipart/form-data" class="mb-5">
         <label for="judul">Judul Artikel</label>
         <input type="text" id="judul" name="judul" placeholder="Masukan judul artikel disini" class="form-control mb-4"
             autocomplete="off" required>
-        <textarea name="artikel" id="mytextarea" placeholder="Tulis isi artikel disini" autocomplete="off"></textarea>
+
+        <textarea name="artikel" id="mytextarea" placeholder="Tulis isi artikel disini"></textarea>
 
         <label for="gambar" class="mt-4">Pilih gambar sebagai header </label>
         <input type="file" name="gambar" class="form-control-file ">
@@ -153,6 +158,9 @@
     <!-- jika artikel masih kosong -->
 
 </div>
+
+
+<link href="../../lib/node_modules/bootstrap/dist/css/bootstrap.min.css" rel=stylesheet>
 
 
 <!-- enable toolpip -->

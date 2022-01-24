@@ -59,8 +59,7 @@ if (isset($_POST["hapus-artikel"])){
     <link href="../../css/admin.css" rel="stylesheet">
 
     <!-- tiny untuk form artikel admin -->
-    <script src="https://cdn.tiny.cloud/1/u51yxlzu6rzzlsbo9lsxoneshd5wmkt1roipja2fz5m12imf/tinymce/5/tinymce.min.js"
-        referrerpolicy="origin"></script>
+    <script src="https://cdn.tiny.cloud/1/u51yxlzu6rzzlsbo9lsxoneshd5wmkt1roipja2fz5m12imf/tinymce/5/tinymce.min.js"referrerpolicy="origin"></script>
     <script>
         tinymce.init({
             selector: '#mytextarea'
