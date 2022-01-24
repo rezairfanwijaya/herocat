@@ -46,7 +46,7 @@ function register($data)
   $query = mysqli_query($conn, $sql);
   if (mysqli_num_rows($query)) {
     echo '
-    <div class="alert alert-warning alert-dismissible fade show sticky-top" role="alert">
+    <div class="alert alert-danger alert-dismissible fade show sticky-top" role="alert">
     <strong>Mohon maaf!</strong> Username telah digunakan,gunakan username yang berbeda.
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
@@ -61,7 +61,7 @@ function register($data)
   // masukan data ke database
   $sqll =  "INSERT INTO user
                 VALUES
-                ('', '$username', '$password', '$gmail', 'user')
+                ('', '$username', '$password', '$gmail', 'user', current_timestamp())
 
     ";
 
@@ -218,10 +218,7 @@ function edit($data){
 function addArticles($data){
   global $conn;
   $judul = htmlspecialchars($data["judul"]);
-  $gambar = uploadGambarArtikel();
-  if (!$gambar){
-    return false;
-  }
+ 
 
   // jika isi artikel kosong
   if ($_POST["artikel"]===""){
@@ -234,6 +231,11 @@ function addArticles($data){
     return false;
   }else{
     $konten = $data["artikel"];
+  }
+
+  $gambar = uploadGambarArtikel();
+  if (!$gambar){
+    return false;
   }
 
   
@@ -412,4 +414,19 @@ function adopsi($data){
 
   mysqli_query($conn, $sql);
   return mysqli_affected_rows($conn);
+}
+
+// cari data pengguna oleh admin
+function cariPengguna($key){
+  global $conn;
+  $sql = "SELECT * FROM user 
+          WHERE 
+          username LIKE '%$key%' OR
+          gmail LIKE '%$key%'
+          
+  ";
+
+  return tampil($sql);
+
+  
 }
