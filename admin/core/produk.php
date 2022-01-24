@@ -94,7 +94,7 @@ $res = mysqli_fetch_assoc($sqlTotal);
 
                         <div class="mb-3">
                             <label for="stok" class="form-label">Stok</label>
-                            <input type="number" readonly class="form-control" id="stok" name="stok" value="1" autocomplete="off" required>
+                            <input type="number"  class="form-control" id="stok" name="stok" value="1" readonly autocomplete="off" required>
                         </div>
 
                         <div class="mb-3">
@@ -121,7 +121,7 @@ $res = mysqli_fetch_assoc($sqlTotal);
         <!-- cari -->
         <form action="" method="POST">
             <div>
-                <input type="text" name="keyword" placeholder="Cari Kucing" autocomplete="off">
+                <input type="text" name="keyword" placeholder="Cari berdasarkan jenis dan stok" autocomplete="off">
             </div>
             <div>
                 <button name="btn-cari" type="submit">

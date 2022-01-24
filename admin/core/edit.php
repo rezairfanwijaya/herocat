@@ -41,7 +41,7 @@ if (isset($_POST["simpan"])){
     <!-- stok kucing -->
     <div class="mb-3">
         <label for="stok" class="form-label">Stok</label>
-        <input type="number" readonly name="stok" class="form-control" value="<?=$kucing["stok"]?>" id="stok" autocomplete="off">
+        <input type="number"  name="stok" class="form-control" value="<?=$kucing["stok"]?>" min="1" max="1" id="stok" autocomplete="off">
     </div>
 
     <!-- deskripsi kucing -->

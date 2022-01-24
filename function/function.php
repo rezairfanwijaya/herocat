@@ -186,7 +186,6 @@ function edit($data){
   $gambar_lama = htmlspecialchars($data["gambar_lama"]);
 
 
-
   // cek apakah user unggah gambar baru
   if ($_FILES["gambar"]["error"] === 4){
     // jika tidak mengunggah gambar baru, pake gambar lama
@@ -412,7 +411,12 @@ function adopsi($data){
           ('', '$nama', '$telpon', '$alamat', '$id_kucing', '$id_user', current_timestamp())
   ";
 
+  $sqlStok = " UPDATE kucing 
+              SET stok = stok-1 WHERE id_kucing = $id_kucing
+  ";
+
   mysqli_query($conn, $sql);
+  mysqli_query($conn, $sqlStok);
   return mysqli_affected_rows($conn);
 }
 
