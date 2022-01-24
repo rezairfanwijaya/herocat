@@ -28,38 +28,6 @@
    
 ?>
 
-
-<!-- hapus data -->
-<div class="d-flex justify-content-end container">
-
-    <button type="button" class="btn btn-danger px-4" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Hapus
-    </button>
-
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Hapus Data</h5>
-        
-      </div>
-      <div class="modal-body">
-        Dengan menekan hapus semua data akan hilang
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-        <form action="" method="POST">
-            <button type="submit" name="kosongkan" class="btn btn-danger">Hapus</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- hapus data -->
-
 <!-- jika data kosong -->
 <?php if (isset($kosong)) : ?>
 <h3 class="text-center">Belum Ada Data</h3>
@@ -68,6 +36,36 @@
 
 <!-- jika ada data -->
 <?php if (isset($ada)) :?>
+    <!-- hapus data -->
+<div class="d-flex justify-content-end container">
+
+<button type="button" class="btn btn-danger px-4" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Hapus
+</button>
+
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Hapus Data</h5>
+    
+  </div>
+  <div class="modal-body">
+    Dengan menekan hapus semua data akan hilang
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+    <form action="" method="POST">
+        <button type="submit" name="kosongkan" class="btn btn-danger">Hapus</button>
+    </form>
+  </div>
+</div>
+</div>
+</div>
+<!-- hapus data -->
 <div class="container">
     <h5 class="mt-5">Total Donasi :Rp <?=number_format($totalDonasi["total"],0,',','.')?> </h5>
     <div class="table-responsive" id="tabel">
