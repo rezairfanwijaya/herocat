@@ -94,7 +94,7 @@ $res = mysqli_fetch_assoc($sqlTotal);
 
                         <div class="mb-3">
                             <label for="stok" class="form-label">Stok</label>
-                            <input type="number" class="form-control" id="stok" name="stok" autocomplete="off" required>
+                            <input type="number" readonly class="form-control" id="stok" name="stok" value="1" autocomplete="off" required>
                         </div>
 
                         <div class="mb-3">
@@ -116,15 +116,7 @@ $res = mysqli_fetch_assoc($sqlTotal);
 
 
     <!-- sub header -->
-    <div class="sub-header mt-5 mb-3 container">
-
-        <!-- total produk keseluruhan-->
-        <div class="total-produk">
-            <div>Total Produk : <span><?= $res["total"]?></span></div>
-        </div>
-        <!-- total produk keseluruhan-->
-
-
+    <div class="sub-header mt-5 mb-3 container d-flex justify-content-end">
 
         <!-- cari -->
         <form action="" method="POST">
