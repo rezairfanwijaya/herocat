@@ -110,7 +110,7 @@ if (isset($_POST["login"])) {
 
     <!-- gagal login -->
     <?php if (isset($failed)) : ?>
-        <div class="alert alert-warning alert-dismissible fade show sticky-top" role="alert">
+        <div class="alert alert-danger alert-dismissible fade show sticky-top" role="alert">
             <strong>Gagal Masuk</strong> username atau password salah.
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
@@ -238,7 +238,7 @@ if (isset($_POST["login"])) {
                 .then((value) => {
                     switch (value) {
                         case "Daftar":
-                            location.href = "hapus.php"
+                            location.href = "register.php"
                     }
 
                 });

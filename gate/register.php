@@ -109,7 +109,7 @@ if (isset($_POST["register"])) {
     <?php if (isset($success)) : ?>
         <script>
             swal({
-                title: "Behasil",
+                title: "Berhasil",
                 text: "Registrasi Berhasil",
                 icon: "success",
                 button: "OK",

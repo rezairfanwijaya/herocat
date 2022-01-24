@@ -47,7 +47,7 @@
         <div class="deskripsi-kucing">
             <p class="judul mt-5">Deskripsi</p>
             <p class="deskripsi"><?=$cat["deskripsi_kucing"]?></p>
-            <p class="warning my-5">*biaya penanganan Rp.200.000,00 bayar ditempat saat pengambilan kucing</p>
+            <p class="warning my-5">*biaya penanganan Rp200.000 bayar ditempat saat pengambilan kucing</p>
         </div>
         <!-- deskripsi kucing -->
 

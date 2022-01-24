@@ -121,7 +121,7 @@ $res = mysqli_fetch_assoc($sqlTotal);
         <!-- cari -->
         <form action="" method="POST">
             <div>
-                <input type="text" name="keyword" placeholder="Cari Data" autocomplete="off">
+                <input type="text" name="keyword" placeholder="Cari Kucing" autocomplete="off">
             </div>
             <div>
                 <button name="btn-cari" type="submit">
