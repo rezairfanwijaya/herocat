@@ -1,5 +1,4 @@
 
-
 <?php 
     require_once('../../partial/admin.php');
     require_once('../../function/function.php');
@@ -48,7 +47,7 @@
 
 
 <div class="container my-5">
-
+    
     <form action="" method="POST" enctype="multipart/form-data" class="mb-5">
         <label for="judul">Judul Artikel</label>
         <input type="text" id="judul" name="judul" placeholder="Masukan judul artikel disini" class="form-control mb-4"
@@ -62,6 +61,7 @@
         <button name="simpan" type="submit" class="btn btn-success mt-4 mb-5">Upload</button>
     </form>
 
+    
 
     <!--  serach bar -->
     <div class="sub-header d-flex justify-content-end align-items-center mb-4">
@@ -160,7 +160,7 @@
 </div>
 
 
-<link href="../../lib/node_modules/bootstrap/dist/css/bootstrap.min.css" rel=stylesheet>
+
 
 
 <!-- enable toolpip -->

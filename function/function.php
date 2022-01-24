@@ -228,7 +228,7 @@ function addArticles($data){
     echo '
     <div class="alert alert-warning alert-dismissible fade show sticky-top" role="alert">
     <strong>Mohon maaf!</strong> Isi artikel tidak boleh kosong
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    
   </div>
     ';
     return false;
