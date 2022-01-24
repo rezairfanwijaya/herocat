@@ -319,7 +319,18 @@ function editArtikel($data){
   $id = $data["id"];
   $gambarLama = $data["gambar_lama"];
   $judul = htmlspecialchars($data["judul"]);
-  $konten = $data["artikel"];
+  // jika isi artikel kosong
+  if ($_POST["artikel"]===""){
+    echo '
+    <div class="alert alert-warning alert-dismissible fade show sticky-top" role="alert">
+    <strong>Mohon maaf!</strong> Isi artikel tidak boleh kosong
+    
+  </div>
+    ';
+    return false;
+  }else{
+    $konten = $data["artikel"];
+  }
 
   
   // apakah user upload gambar baru

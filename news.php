@@ -4,7 +4,7 @@
     require_once('function/function.php');
 
     // ambil data artikel
-    $articles = tampil("SELECT * from berita");
+    $articles = tampil("SELECT * from berita ORDER BY id_berita DESC");
 
     // import nav
     require_once('partial/nav-news.php');

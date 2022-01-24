@@ -4,7 +4,7 @@
     require_once('function/function.php');
 
     // ambil data kucing
-    $cats = tampil("SELECT * FROM kucing");
+    $cats = tampil("SELECT * FROM kucing ORDER BY id_kucing DESC");
 
     // import navbar
     require_once('partial/nav-adopt.php');

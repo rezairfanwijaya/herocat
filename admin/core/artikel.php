@@ -23,7 +23,7 @@
     }
 
       // menampilkan seluruh artikel
-      $articles = tampil("SELECT * FROM berita");
+      $articles = tampil("SELECT * FROM berita ORDER BY id_berita DESC");
 
     // cari artikel
     if (isset($_POST["btn-cari"])){
@@ -127,14 +127,14 @@
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Apakah Anda Yakin ?</h5>
+                                    <h5 class="modal-title" id="exampleModalLabel">Hapus Artikel ?</h5>
                                 </div>
                                 <form action="" method="POST" enctype="multipart/form-data">
                                     <input type="hidden" name="id" value="<?=$artikel["id_berita"]?>">
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
                                             data-bs-dismiss="modal">Tidak</button>
-                                        <button type="submit" name="hapus-artikel" class="btn btn-primary">Ya</button>
+                                        <button type="submit" name="hapus-artikel" class="btn btn-danger">Ya</button>
                                     </div>
                                 </form>
                             </div>
