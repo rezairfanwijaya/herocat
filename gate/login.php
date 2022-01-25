@@ -2,6 +2,7 @@
 require_once '../session/user/session_out.php';
 require_once '../session/admin/session_out.php';
 require_once "../function/function.php";
+error_reporting(0);
 
 
 // cek cookie untuk user

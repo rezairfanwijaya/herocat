@@ -7,6 +7,7 @@ require_once("../function/function.php");
 // cek tombol daftar sudah diklik atau belum
 if (isset($_POST["register"])) {
     // jalankan function register
+
     if (register($_POST) > 0) {
         $success = true;
     }
@@ -62,7 +63,7 @@ if (isset($_POST["register"])) {
             </div>
 
             <div class=" login mb-4 ">
-                <button type="submit " name="register" class="btn-login ">Register</button>
+                <button type="submit " name="register" class="btn-login">Register</button>
             </div>
 
             <div class="to-signup mt-3 ">
