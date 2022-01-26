@@ -18,11 +18,6 @@ table tr td.desc {
     width: 35px;
 }
 
-table td img:hover {
-    transform: scale(2.2);
-    transition: 1s;
-}
-
 .sub-header {
     display: flex;
     justify-content: space-between;

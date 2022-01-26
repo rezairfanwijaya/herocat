@@ -14,7 +14,7 @@ if(isset($_POST["hapus"])){
 }
 
 // upload artikel
-if (isset($_POST["simpan"])){
+if (isset($_POST["simpan-artikel"])){
         
     if (addArticles($_POST)>0){
         $success = true;

@@ -44,9 +44,7 @@ if (isset($_POST["btn-cari"])){
 
 
 // menghitung jumlah data umum
-$sqlTotal = mysqli_query($conn, "SELECT COUNT(id_kucing) as total FROM kucing");
 
-$res = mysqli_fetch_assoc($sqlTotal);
 
 
 
@@ -149,7 +147,7 @@ $res = mysqli_fetch_assoc($sqlTotal);
 
 
 
-    <div class="table-responsive container">
+    <div class="table-responsive container p-5">
         <table class="table table-bordered text-center">
             <thead>
                 <tr>

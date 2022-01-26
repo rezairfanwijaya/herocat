@@ -49,7 +49,7 @@
         <label for="gambar" class="mt-4">Pilih gambar sebagai header </label>
         <input type="file" name="gambar" class="form-control-file ">
 
-        <button name="simpan" type="submit" class="btn btn-success mt-4 mb-5">Upload</button>
+        <button name="simpan-artikel" type="submit" class="btn btn-success mt-4 mb-5">Upload</button>
     </form>
 
     <!-- list artikel yang sudah diupload -->

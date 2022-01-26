@@ -73,12 +73,6 @@ $donasi = tampil($sqlJoinDonasi);
   
       $adopsi = tampil($sqlAdopsi);
       $noAdopsi = 1;
-
-
-
-
-
-
 ?>
 <style>
     .card {
@@ -97,11 +91,11 @@ $donasi = tampil($sqlJoinDonasi);
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <!-- <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+        <a href="cetak.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                 class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
-    </div>
+    </div> -->
 
     <!-- Content Row -->
     <div class="row mb-5">
@@ -309,7 +303,7 @@ $donasi = tampil($sqlJoinDonasi);
         <!-- jika data kosong -->
 
         <?php if (isset($adaAdopsi)):?>
-            <table class="table table-bordered text-center my-3">
+        <table class="table table-bordered text-center my-3">
             <tr>
                 <th>No</th>
                 <th>Nama</th>
