@@ -80,8 +80,8 @@ html {
 </style>
 
 <body>
-    <div class="welcome text-center my-5">
-        <h2>Hallo  <?=$user["username"]?></h2>
+    <div class="welcome text-left my-5 container">
+        <h1>Hallo  <?=$user["username"]?></h1>
     </div>
 
     <!-- Aktifitas Terakhir -->

@@ -27,7 +27,7 @@ $artikel = mysqli_fetch_assoc($query);
     </div>
 
     <!-- isi konten -->
-    <article>
+    <article style="text-align: justify;">
         <?=$artikel["konten"]?>
     </article>
     
