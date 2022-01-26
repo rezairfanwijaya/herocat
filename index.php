@@ -37,8 +37,12 @@ $articles = tampil("SELECT * FROM berita LIMIT 4");
             <div class="card" style="width: 18rem;">
                 <img src="assets/adopsi/<?= $cat["gambar"] ?>" class="card-img-top" alt="anggora">
                 <div class="card-body">
-                    <h5 class="card-title my-4 text-center"><?= $cat["jenis_kucing"] ?></h5>
+                    <h5 class="card-title my-4 text-center"><?= $cat["jenis_kucing"]?></h5>
+                    <?php if ($cat["stok"]==="0"):?>
+                        <div class="btn btn-secondary" style="background-color: #6c757d;">Stok kosong</div>
+                    <?php else :?>
                     <a href="detail-adopsi.php?id=<?=$cat["id_kucing"]?>" class="btn text-white ">Adopsi</a>
+                    <?php endif ?>
                 </div>
             </div>
         </div>
@@ -83,7 +87,7 @@ $articles = tampil("SELECT * FROM berita LIMIT 4");
     <p class="title-section">Artikel</p>
     <div class="row ">
         <?php foreach ($articles as $article) : ?>
-        <div class="col-12 col-md-6 col-lg-6" >
+        <div class="col-12 col-md-6 col-lg-6">
             <div class="card artikel" style="width: 90%;">
                 <img src="assets/artikel/<?=$article["gambar"]?>" class="img-fluid" style="width: 100%;">
                 <div class="card-body">
@@ -91,7 +95,8 @@ $articles = tampil("SELECT * FROM berita LIMIT 4");
                         <h5 class="card-title my-4 text-dark"><?= $article["judul"]?></h5>
                     </a>
                     <p class="text-muted">Pada : <?=date('d F Y', strtotime($article["tanggal"]))?></p>
-                    <a href="detail-artikel.php?id=<?=$article["id_berita"]?>" class="text-decoration-none read">Baca Selengkapnya</a>
+                    <a href="detail-artikel.php?id=<?=$article["id_berita"]?>" class="text-decoration-none read">Baca
+                        Selengkapnya</a>
                 </div>
             </div>
         </div>

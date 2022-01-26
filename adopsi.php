@@ -5,6 +5,7 @@
 
     // ambil data kucing
     $cats = tampil("SELECT * FROM kucing ORDER BY id_kucing DESC");
+    
 
     // import navbar
     require_once('partial/nav-adopt.php');
@@ -27,7 +28,15 @@
                 <img src="assets/adopsi/<?=$cat["gambar"]?>" class="card-img-top" alt="...">
                 <div class="card-body text-center py-4">
                     <h5 class="card-title mb-4"><?=$cat["jenis_kucing"]?></h5>
-                    <a href="detail-adopsi.php?id=<?=$cat["id_kucing"]?>" class="btn btn-primary px-4" style="font-size: 1.2rem;">Adopsi</a>
+
+                    <?php if ($cat["stok"] === "0") :?>
+                    <div class="btn btn-secondary px-4 "style="font-size: 1.2rem;">stok kosong</div>
+
+                    <?php else :?>
+                    <a href="detail-adopsi.php?id=<?=$cat["id_kucing"]?>" class="btn btn-primary px-4"
+                        style="font-size: 1.2rem;">Adopsi</a>
+                    <?php endif?>
+
                 </div>
             </div>
         </div>
