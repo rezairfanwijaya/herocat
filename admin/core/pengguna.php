@@ -3,7 +3,7 @@ require_once('../../partial/admin.php');
 require_once('../../function/function.php');
 
 // cek apakah data ada
-$data = mysqli_query($conn, "SELECT * FROM user ");
+$data = mysqli_query($conn, "SELECT * FROM user where level = 'user' ");
 if (mysqli_num_rows($data)>0){
     $ada = true;
 }else{
@@ -32,6 +32,15 @@ if (isset($_POST["btn-cari"])){
 
 <div class="container">
 
+    <!-- jika data kosong -->
+    <?php if (isset($kosong)) : ?>
+    <h3 class="text-center">Belum Ada Data</h3>
+    <?php endif ?>
+    <!-- jika data kosong -->
+
+    <!-- jika ada data -->
+    <?php if (isset($ada)) :?>
+
     <!-- cari user -->
     <div class="sub-header mt-5 mb-3 container d-flex justify-content-end">
         <!-- cari -->
@@ -49,17 +58,6 @@ if (isset($_POST["btn-cari"])){
     </div>
     <!-- cari user -->
 
-
-    <!-- jika data kosong -->
-    <?php if (isset($kosong)) : ?>
-    <h3 class="text-center">Belum Ada Data</h3>
-    <?php endif ?>
-    <!-- jika data kosong -->
-
-    <!-- jika ada data -->
-    <?php if (isset($ada)) :?>
-
-    
     <div class="table-responsive">
         <table class="table table-bordered text-center my-3">
             <tr>
