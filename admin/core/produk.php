@@ -94,7 +94,8 @@ $res = mysqli_fetch_assoc($sqlTotal);
 
                         <div class="mb-3">
                             <label for="stok" class="form-label">Stok</label>
-                            <input type="number"  class="form-control" id="stok" name="stok" value="1" readonly autocomplete="off" required>
+                            <input type="number" class="form-control" id="stok" name="stok" value="1" readonly
+                                autocomplete="off" required>
                         </div>
 
                         <div class="mb-3">
@@ -114,6 +115,18 @@ $res = mysqli_fetch_assoc($sqlTotal);
     </div>
     <!-- Modal tambah produk -->
 
+
+
+    <!-- field tampil data -->
+
+    <!-- jika data kosong -->
+    <?php if (isset($kosong)) : ?>
+    <h3 class="text-center">Belum Ada Data</h3>
+    <?php endif ?>
+    <!-- jika data kosong -->
+
+    <!-- jika data tidak kosong -->
+    <?php if (isset($ada)) : ?>
 
     <!-- sub header -->
     <div class="sub-header mt-5 mb-3 container d-flex justify-content-end">
@@ -135,16 +148,7 @@ $res = mysqli_fetch_assoc($sqlTotal);
     <!-- subheader -->
 
 
-    <!-- field tampil data -->
 
-    <!-- jika data kosong -->
-    <?php if (isset($kosong)) : ?>
-    <h3 class="text-center">Belum Ada Data</h3>
-    <?php endif ?>
-    <!-- jika data kosong -->
-
-    <!-- jika data tidak kosong -->
-    <?php if (isset($ada)) : ?>
     <div class="table-responsive container">
         <table class="table table-bordered text-center">
             <thead>

@@ -7,7 +7,7 @@
     $id = $_GET["id"];
 
     // proses save edit
-    if (isset($_POST["simpan"])){
+    if (isset($_POST["edit"])){
         if (editArtikel($_POST) > 0){
             $success = true;
         }else{
@@ -40,7 +40,7 @@
         <button class="btn btn-danger mt-4 px-2">
             <a href="artikel.php" class="text-white text-decoration-none">Batal</a>
         </button>
-        <button name="simpan" type="submit" class="btn btn-success mt-4 ml-2 px-4">Simpan</button>
+        <button name="edit" type="submit" class="btn btn-success mt-4 ml-2 px-4">Simpan</button>
     </form>
 </div>
 

@@ -1,4 +1,3 @@
-
 <?php 
     require_once('../../partial/admin.php');
     require_once('../../function/function.php');
@@ -10,20 +9,12 @@
     $artikel = mysqli_query($conn, "SELECT * FROM berita");
     if (mysqli_num_rows($artikel) === 0){
         $noArticle = true;
-    }
-    
-    // upload artikel
-    if (isset($_POST["simpan"])){
-        
-        if (addArticles($_POST)>0){
-            $success = true;
-        }else{
-            $failed = true;
-        }
+    }else{
+        $adaArticle= true;
     }
 
-      // menampilkan seluruh artikel
-      $articles = tampil("SELECT * FROM berita ORDER BY id_berita DESC");
+    // menampilkan seluruh artikel
+    $articles = tampil("SELECT * FROM berita ORDER BY id_berita DESC");
 
     // cari artikel
     if (isset($_POST["btn-cari"])){
@@ -47,7 +38,7 @@
 
 
 <div class="container my-5">
-    
+
     <form action="" method="POST" enctype="multipart/form-data" class="mb-5">
         <label for="judul">Judul Artikel</label>
         <input type="text" id="judul" name="judul" placeholder="Masukan judul artikel disini" class="form-control mb-4"
@@ -61,8 +52,8 @@
         <button name="simpan" type="submit" class="btn btn-success mt-4 mb-5">Upload</button>
     </form>
 
-    
-
+    <!-- list artikel yang sudah diupload -->
+    <?php if (isset($adaArticle)) :?>
     <!--  serach bar -->
     <div class="sub-header d-flex justify-content-end align-items-center mb-4">
 
@@ -79,9 +70,6 @@
 
     </div>
     <!--  serach bar -->
-
-
-    <!-- list artikel yang sudah diupload -->
     <div class="row d-flex justify-content-center">
         <?php foreach ($articles as $artikel) :?>
         <div class="col-12 col-md-6 col-lg-6  my-2" style="width:max-content">
@@ -147,6 +135,7 @@
         <?php endforeach ?>
     </div>
     <!-- list artikel yang sudah diupload -->
+    <?php endif?>
 
     <!-- jika artikel masih kosong -->
     <?php if (isset($noArticle)) :?>

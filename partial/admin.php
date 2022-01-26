@@ -13,6 +13,16 @@ if(isset($_POST["hapus"])){
     hapus($id);
 }
 
+// upload artikel
+if (isset($_POST["simpan"])){
+        
+    if (addArticles($_POST)>0){
+        $success = true;
+    }else{
+        $failed = true;
+    }
+}
+
 // hapus data artikel
 if (isset($_POST["hapus-artikel"])){
     $id = $_POST["id"];
