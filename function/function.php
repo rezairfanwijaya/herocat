@@ -2,6 +2,7 @@
 
 // koneksi ke database
 $conn = mysqli_connect("localhost", "root", "", "herocat");
+
 // jika database error
 if (!$conn) {
 
