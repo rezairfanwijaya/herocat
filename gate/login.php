@@ -135,17 +135,17 @@ if (isset($_POST["login"])) {
                 <input type="text" name="username" placeholder="ex : Clarissa" id="username" autocomplete="off" required>
             </div>
 
-            <div class="password form mb-2">
+            <div class="password form mb-5">
                 <label for="password" class="mb-2">password</label>
                 <br>
                 <input type="password" name="password" id="password" autocomplete="off" required>
                 <img src="../assets/img/see.png" alt="see" class="icon" onclick="see(true)">
                 <img src="../assets/img/hide.png" alt="see" class="icon" onclick="see(false)">
             </div>
-            <div class="cookie form mb-5">
+            <!-- <div class="cookie form mb-5">
                 <input type="checkbox" name="cookie" class="cookie" id="cookie">
                 <label for="cookie">Remember Me</label>
-            </div>
+            </div> -->
 
             <div class=" login mb-4 ">
                 <button type="submit " name="login" class="btn-login ">Login</button>

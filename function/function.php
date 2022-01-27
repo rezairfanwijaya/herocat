@@ -224,7 +224,6 @@ function addArticles($data){
     echo '
     <div class="alert alert-warning alert-dismissible fade show sticky-top" role="alert">
     <strong>Mohon maaf!</strong> Isi artikel tidak boleh kosong
-    
   </div>
     ';
     return false;

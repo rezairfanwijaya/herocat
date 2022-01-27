@@ -3,7 +3,14 @@
     require_once('../../function/function.php');
     error_reporting(0);
 
-  
+      // upload artikel
+if (isset($_POST["simpan-artikel"])){
+    if (addArticles($_POST)>0){
+        $success = true;
+    }else{
+        $failed = true;
+    }
+}
 
     // cek apakah artikel sudah ada atau belum
     $artikel = mysqli_query($conn, "SELECT * FROM berita");
@@ -15,6 +22,9 @@
 
     // menampilkan seluruh artikel
     $articles = tampil("SELECT * FROM berita ORDER BY id_berita DESC");
+
+
+
 
     // cari artikel
     if (isset($_POST["btn-cari"])){

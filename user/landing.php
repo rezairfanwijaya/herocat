@@ -204,7 +204,7 @@ require_once('../session/admin/session_out.php');
             <div class="sosmed">
                 <p class="title">Kontak</p>
                 <div class="sosmed-list" id="kontak">
-                    <a href="#">
+                    <a  href="https://api.whatsapp.com/send?phone=6283822755337&text=Hallo%20admin%20Herocat! %20Saya ada pertanyaan nih." class="text-decoration-none" target="blank">
                         <ion-icon name="logo-whatsapp" class="icon wa"></ion-icon>
                     </a>
 
