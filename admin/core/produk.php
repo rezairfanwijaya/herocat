@@ -22,7 +22,7 @@ if (mysqli_num_rows($query) === 0) {
 }
 
 // tampil data
-$cats = tampil("SELECT * FROM kucing");
+$cats = tampil("SELECT * FROM kucing ORDER BY id_kucing DESC");
 
 $no = 1;
 

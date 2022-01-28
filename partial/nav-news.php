@@ -53,7 +53,7 @@
                 <!-- search -->
                 <form action="" method="POST">
                     <div class="cari">
-                        <input type="text" name="cari" placeholder="Cari artikel disini" autocomplete="off">
+                        <input type="text" name="cari" placeholder="Cari judul artikel disini" autocomplete="off">
                         <button type="submit" class="btn" name="btn-cari">
                             <ion-icon name="search" class="icon"></ion-icon>
                         </button>
